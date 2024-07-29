@@ -1,0 +1,21 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.torchlight {
+  background-color: rgba(255, 255, 255, 0.318);
+  border-radius: 50%;
+  transition: transform 0.2s ease-out, background-color 0.2s ease-out;
+}
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.remove-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.remove-scrollbar {
+  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: none !important; /* Firefox */
+}
