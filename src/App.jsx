@@ -6,15 +6,18 @@ import Unique from "./Components/Uniquestyles";
 import Unleash from "./Components/Unleash";
 import Property from "./Components/Property";
 
+import Cover from "./Components/CoverTop";
+
 function App() {
   return (
     <>
-      <Property/>
-      <Unleash/>
-      <Unique/>
+      <Cover />
+      <Property />
+      <Unleash />
+      <Unique />
       <Article />
-      <Instawall/>
-      <Footer/>
+      <Instawall />
+      <Footer />
     </>
   );
 }

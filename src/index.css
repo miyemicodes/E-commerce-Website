@@ -2,10 +2,11 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-.torchlight {
-  background-color: rgba(255, 255, 255, 0.318);
-  border-radius: 50%;
-  transition: transform 0.2s ease-out, background-color 0.2s ease-out;
+.cover{
+  background-image: url('../src/assets/Homepage-2copy2.jpg');
+  height: 250px;
+  background-position:center;
+  object-fit: cover;
 }
 
 
