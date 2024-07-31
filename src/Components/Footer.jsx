@@ -8,7 +8,7 @@ import { FaMediumM } from "react-icons/fa";
 export default function Footer() {
   return (
     <>
-      <section className="flex flex-col bg-[#fbf3e2] border-t-[#fbe8d7] border-t-4">
+      <section className="flex flex-col bg-[#fbf3e2] border-t-[#fbe8d7] border-t-4 ">
         <div className="px-16 py-4 flex flex-wrap items-start gap-6 ">
           <div className="flex flex-1 flex-col gap-4 text-sm">
             <div className="flex flex-col gap-2">
