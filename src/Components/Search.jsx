@@ -8,7 +8,7 @@ export default function Search() {
         <input
           type="text"
           placeholder="Search..."
-          className="hidden  border-none outline-none md:block lg:block"
+          className="hidden bg-transparent border-none outline-none md:block lg:block"
         />
         <FaSearch className="text-[#a5a5a5]" />
       </div>

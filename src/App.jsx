@@ -1,16 +1,21 @@
-import react from "react";
-import Cover from "./Components/CoverTop";
-import Vision from "./Components/Vision";
-import ProductDetails from "./Components/ProductDetail";
+// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import AboutUs from "./Components/AboutUs";
 import Home from "./Components/Home";
+import ProductDetails from "./Components/ProductDetail";
 
 function App() {
   return (
     <>
       <Home />
-      <Cover />
-      <Vision />
       <ProductDetails />
+      <AboutUs/>
+
+      {/* <Router>
+        <Routes>
+          <Route exact path="/" Component={<Home />} />
+          <Route path="/productDetails" Component={<ProductDetails />} />
+        </Routes>
+      </Router> */}
     </>
   );
 }
