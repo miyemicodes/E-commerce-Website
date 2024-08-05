@@ -6,17 +6,20 @@ export default function Unleash() {
   return (
     <>
       <section className="px-16 py-4 flex flex-row gap-5">
-        <div className="bg-[#f5f5f2] flex flex-col flex-1 px-6 py-10 gap-5 rounded-md">
-          <span className="bg-white text-black text-sm p-1  rounded-lg w-fit">
+        <div className="bg-[#f5f5f2] flex flex-col items-start justify-center flex-1 px-8 py-10 gap-8 rounded-md">
+          <span className="bg-white text-black text-sm px-2 py-1 rounded-full w-fit font-semibold">
             Get 25% off this week
           </span>
-          <p className="font-semibold text-3xl ">
+          <p className="font-bold text-3xl pt-16 md:text-5xl md:px-5">
             Unleash Your Cravings,Not Your Wallet !
           </p>
-          <Button/>
+          <Button />
         </div>
         <div className="flex-1 rounded-md">
-          <img src={featuredImage1} className="rounded-md" />
+          <img
+            src={featuredImage1}
+            className="rounded-md md:w-[500px] md:h-[500px] object-cover"
+          />
         </div>
       </section>
     </>

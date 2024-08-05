@@ -15,7 +15,7 @@ export default function SparkleItem() {
         </h1>
 
         <div className="flex flex-row items-center justify-center gap-3 relative">
-          <div className="">
+          <div>
             <div className="w-[200px]">
               <img src={sparkleImage1} className="w-full object-cover" />
             </div>
@@ -29,7 +29,7 @@ export default function SparkleItem() {
             </div>
           </div>
 
-          <div className="">
+          <div>
             <div className="w-[200px] ">
               <img src={sparkleImage2} className="w-full object-cover" />
             </div>
@@ -43,7 +43,7 @@ export default function SparkleItem() {
             </div>
           </div>
 
-          <div className="">
+          <div>
             <div className="w-[200px]">
               <img src={sparkleImage3} className="w-full object-cover" />
             </div>
@@ -57,7 +57,7 @@ export default function SparkleItem() {
             </div>
           </div>
 
-          <div className="">
+          <div>
             <div className="w-[200px] ">
               <img src={sparkleImage4} className="w-full object-cover" />
             </div>
@@ -71,7 +71,7 @@ export default function SparkleItem() {
             </div>
           </div>
 
-          <div className="">
+          <div>
             <div className="w-[200px]">
               <img src={sparkleImage5} className="w-full object-cover" />
             </div>

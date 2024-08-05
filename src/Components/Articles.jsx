@@ -14,7 +14,7 @@ export default function Article() {
         </h2>
 
         <div className="flex flex-row items-start justify-center gap-4">
-          <div className=" flex-1 text-sm ">
+          <div className="flex flex-col gap-2 flex-1 text-sm ">
             <img
               src={articleImage1}
               alt="Lavish Pendant"
@@ -33,7 +33,8 @@ export default function Article() {
               <FaArrowRight />
             </a>
           </div>
-          <div className="flex-1 text-sm ">
+
+          <div className="flex flex-col gap-2 flex-1 text-sm ">
             <img
               src={articleImage2}
               alt="Lavish Pendant"
@@ -53,7 +54,8 @@ export default function Article() {
               <FaArrowRight />
             </a>
           </div>
-          <div className="flex-1 text-sm">
+
+          <div className="flex flex-col gap-2 flex-1 text-sm">
             <img
               src={articleImage3}
               alt="Lavish Pendant"
