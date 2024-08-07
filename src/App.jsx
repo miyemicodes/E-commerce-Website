@@ -14,18 +14,6 @@ function App() {
           <Route path="/about" Component={AboutUs} />
         </Routes>
       </BrowserRouter>
-
-      {/*
-      <Router>
-        <Routes>
-          <Route exact path="/" Component={<Home />} />
-          <Route path="/productDetails" Component={<ProductDetails />} />
-        </Routes>
-      </Router>
-       <Home />
-      <ProductDetails />
-      <AboutUs /> 
-      */}
     </>
   );
 }

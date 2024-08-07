@@ -15,6 +15,7 @@ export default function Unleash() {
           </p>
           <Button />
         </div>
+
         <div className="flex-1 rounded-md">
           <img
             src={featuredImage1}

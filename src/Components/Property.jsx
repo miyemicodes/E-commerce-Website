@@ -7,7 +7,7 @@ import { MdSafetyCheck } from "react-icons/md";
 export default function Property() {
   return (
     <>
-      <section className=" px-24 py-4">
+      <section className="px-24 py-4">
         <div className="grid grid-cols-2 items-center justify-center gap-3 py-16 md:grid-cols-4  lg:divide-x-2 lg:grid-cols-4 lg:gap-0">
           <div className="flex flex-col items-center justify-center gap-2 bg-[#eeeeeb] px-5 py-6 rounded-md lg:rounded-none ">
             <LiaCertificateSolid className="bg-white text-[#d1ab6c] rounded-3xl text-3xl" />

@@ -5,6 +5,8 @@ import NavBar from "./NavBar";
 import Cover from "./CoverTop";
 import Button from "./ShopNow";
 import productImage from "../assets/productDetail.jpg";
+import Testimonial from "./Testimonial";
+import Related from "./RelatedProduct";
 
 export default function ProductDetails() {
   return (
@@ -12,24 +14,25 @@ export default function ProductDetails() {
       <section>
         <NavBar />
         <Cover />
-        <div className="flex flex-col items-center justify-center px-8 py-16 md:flex-row  md:px-18">
+
+        <div className="py-10 px-24 flex flex-col items-center justify-center gap-8 md:flex-row  md:px-18">
           <div className="grid grid-cols-1 gap-3 flex-1">
             <img
               src={productImage}
-              className=" w-[629px] h-[500px] object-cover object-top"
+              className=" w-full h-[500px] object-cover object-top"
             />
-            <div className="flex flex-row items-start gap-3 w-[629px] ">
+            <div className="flex flex-row items-start gap-3 w-[600px] ">
               <img
                 src={productImage}
-                className="w-auto h-40 flex-1 object-cover object-top"
+                className="w-[100px] h-40 flex-1 object-cover object-top"
               />
               <img
                 src={productImage}
-                className="w-[auto] flex-1 h-40 object-cover object-bottom"
+                className="w-[100px] flex-1 h-40 object-cover object-bottom"
               />
               <img
                 src={productImage}
-                className="w-auto h-40 flex-1 object-cover object-center"
+                className="w-[100px] h-40 flex-1 object-cover object-center"
               />
             </div>
           </div>
@@ -71,9 +74,38 @@ export default function ProductDetails() {
             </div>
           </div>
         </div>
-        <Property />
-        <div></div>
 
+        <Property />
+
+        <div className="py-6 px-24 text-left">
+          <div className="flex items-start justify-start gap-3 py-6">
+            <button className="border font-semibold px-2 py-1 rounded-md hover:text-white hover:bg-[#967f50]">
+              Description
+            </button>
+            <button className="border font-semibold px-2 py-1 rounded-md hover:text-white hover:bg-[#967f50]">
+              Additional Information
+            </button>
+          </div>
+
+          <div>
+            <h1 className="font-serif text-3xl pb-4">Product Description</h1>
+            <p className="text-sm text-[#8a8b85]">
+              This is the most used props for routing. It helps in specifying
+              the target location to which the link should navigate. It can be a
+              string representing the path name or an object with path name.
+              When you click on Dashboard you will be redirected to that
+              component. This is the most used props for routing. It helps in
+              specifying the target location to which the link should navigate.
+              It can be a string representing the path name or an object with
+              path name. When you click on Dashboard you will be redirected to
+              that component.
+            </p>
+          </div>
+        </div>
+
+        <Testimonial />
+
+        <Related/>
         <Footer />
       </section>
     </>
