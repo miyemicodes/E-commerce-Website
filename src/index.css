@@ -20,6 +20,7 @@
   scrollbar-width: none !important; /* Firefox */
 }
 
+/* 
 .wrapper .question-container {
   width: 100%;
   text-align: left;
@@ -60,4 +61,4 @@
 .wrapper.answer-content {
   padding: 1rem 0;
   font-size: 20px;
-}
+} */
