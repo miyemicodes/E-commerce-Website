@@ -6,7 +6,7 @@ const FAQAccordion = () => {
   return (
     <section className="bg-[#ededea]  py-16">
       <div className="flex flex-col items-center justify-center gap-3">
-        <span className="text-sm"> Ask Us Anything</span>
+        <span className="text-sm font-semibold"> Ask Us Anything</span>
         <h1 className="text-4xl font-serif">Frequently Asked Questions</h1>
         <p className="text-sm">
           Our friendly team would love to answer your questions.

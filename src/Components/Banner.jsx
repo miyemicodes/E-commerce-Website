@@ -2,13 +2,14 @@ import React from "react";
 import Button from "./ShopNow";
 import homeImage1 from "../assets/Homepage-1.jpg";
 import homeImage2 from "../assets/Homepage-2.jpg";
+import qualityImage from "../assets/bannerBrandPic.png";
 import textImage from "../assets/instapage-image-neckpiece.jpg";
 
 export default function BannerPage() {
   return (
     <>
       <section className="bg-[#fbf3e2] flex flex-col items-center justify-center gap-12 px-24 py-12 md:flex-row">
-        <div className="flex flex-col items-center justify-center md:items-start md:justify-start gap-4 flex-1 ">
+        <div className="flex flex-col items-center justify-center md:items-start md:justify-start gap-4 flex-1 w-full">
           <h2 className="text-center text-3xl font-serif md:text-7xl md:text-start">
             Experience the Brilliance of
             <img
@@ -21,8 +22,10 @@ export default function BannerPage() {
             Discover a World where beaury meets Craftsmanship,and every piece of
             jewellry tells a story .
           </p>
-          <div>
+          <div className="w-[90%] flex flex-row items-center justify-between">
             <Button />
+
+            <img src={qualityImage} className="md:w-20 h-20 object-cover" />
           </div>
         </div>
 
