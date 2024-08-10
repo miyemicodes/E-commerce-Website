@@ -1,5 +1,7 @@
 import React from "react";
 import { FaArrowRight, FaCaretLeft, FaCaretRight } from "react-icons/fa";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import sparkleImage1 from "../assets/sparkle-1.jpg";
 import sparkleImage2 from "../assets/sparkle-2.jpg";
 import sparkleImage3 from "../assets/instapage-image-bracelet.jpg";
@@ -15,6 +17,7 @@ export default function SparkleItem() {
         </h1>
 
         <div className="flex flex-row items-center justify-center gap-3 relative">
+          
           <div>
             <div className="w-[200px]">
               <img src={sparkleImage1} className="w-full object-cover" />

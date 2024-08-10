@@ -2,13 +2,12 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-.cover{
-  background-image: url('../src/assets/Homepage-2copy2.jpg');
+.cover {
+  background-image: url("../src/assets/Homepage-2copy2.jpg");
   height: 250px;
-  background-position:center;
+  background-position: center;
   object-fit: cover;
 }
-
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .remove-scrollbar::-webkit-scrollbar {
@@ -19,4 +18,46 @@
 .remove-scrollbar {
   -ms-overflow-style: none !important; /* IE and Edge */
   scrollbar-width: none !important; /* Firefox */
+}
+
+.wrapper .question-container {
+  width: 100%;
+  text-align: left;
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.question-container.active {
+  background-color: aquamarine;
+  color: #b91dac;
+}
+
+.wrapper .question-container:hover {
+  background-color: aquamarine;
+}
+
+.wrapper .arrow {
+  font-size: 2rem;
+  transition: 0.5s ease-in-out;
+}
+
+.arrow.active {
+  rotate: 180deg;
+  color: #b91dac;
+}
+
+.wrapper .answer-container {
+  padding: 0 1rem;
+  transition: height 0.7s ease-in-out;
+}
+
+.wrapper.answer-content {
+  padding: 1rem 0;
+  font-size: 20px;
 }

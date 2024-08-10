@@ -9,7 +9,7 @@ export default function Related() {
   return (
     <>
       <section className="py-8 px-24">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between pb-10">
           <h2 className="font-serif text-3xl pb-4"> Related Products</h2>
 
           <div className="flex gap-2">
@@ -23,17 +23,18 @@ export default function Related() {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 items-center justify-center w-full lg:grid-cols-4">
-          <div className="flex flex-col items-start justify-start ">
-            <div className="h-[300px] w-[200px]">
+        <div className="grid md:grid-cols-2 items-center justify-center gap-1 w-full lg:grid-cols-4">
+          
+          <div className="flex flex-col items-start justify-start gap-2">
+            <div className="h-[300px] w-[250px]">
               <img
                 src={instaImage1}
-                className="rounded-md h-[300px] w-[200px] object-cover"
+                className="rounded-md h-[300px] w-[250px] object-cover"
               />
             </div>
 
-            <div className="flex flex-col gap-2">
-              <div className="flex ">
+            <div className="flex flex-col items-start gap-2 w-[250px]">
+              <div className="w-full flex items-center justify-between">
                 <p className="font-semibold font-sans"> Gold Hoop Earrings</p>
                 <FaCircleArrowRight className="text-white bg-black rounded-full text-xl" />
               </div>
@@ -47,14 +48,15 @@ export default function Related() {
             </div>
           </div>
 
-          <div className="flex flex-col items-start justify-start ">
-            <div className="h-[300px] w-[200px]">
+          <div className="flex flex-col items-start justify-start gap-2">
+            <div className="h-[300px] w-[250px]">
               <img
                 src={articleImage1}
-                className="rounded-md h-[300px] w-[200px] object-cover"
+                className="rounded-md h-[300px] w-[250px] object-cover"
               />
             </div>
-            <div className="flex flex-col gap-2">
+
+            <div className="flex flex-col gap-2 w-[250px]">
               <div className="flex flex-row items-center justify-between">
                 <p className="font-semibold font-sans"> Gold Hoop Earrings</p>
                 <FaCircleArrowRight className="text-white bg-black rounded-full text-xl" />
@@ -69,14 +71,14 @@ export default function Related() {
             </div>
           </div>
 
-          <div className="flex flex-col items-start justify-start ">
-            <div className="h-[300px] w-[200px]">
+          <div className="flex flex-col items-start justify-start gap-2">
+            <div className="h-[300px] w-[250px]">
               <img
                 src={articleImage3}
-                className="rounded-md h-[300px] w-[200px] object-cover"
+                className="rounded-md h-[300px] w-[250px] object-cover"
               />
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 w-[250px]">
               <div className="flex flex-row items-center justify-between">
                 <p className="font-semibold font-sans"> Gold Hoop Earrings</p>
                 <FaCircleArrowRight className="text-white bg-black rounded-full text-xl" />
@@ -91,14 +93,14 @@ export default function Related() {
             </div>
           </div>
 
-          <div className="flex flex-col items-start justify-start ">
-            <div className="h-[300px] w-[200px]">
+          <div className="flex flex-col items-start justify-start gap-2">
+            <div className="h-[300px] w-[250px]">
               <img
                 src={instaImage2}
-                className="rounded-md h-[300px] w-[200px] object-cover"
+                className="rounded-md h-[300px] w-[250px] object-cover"
               />
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 w-[250px]">
               <div className="flex flex-row items-center justify-between">
                 <p className="font-semibold font-sans"> Gold Hoop Earrings</p>
                 <FaCircleArrowRight className="text-white bg-black rounded-full text-xl" />
@@ -112,6 +114,7 @@ export default function Related() {
               </div>
             </div>
           </div>
+          
         </div>
       </section>
     </>

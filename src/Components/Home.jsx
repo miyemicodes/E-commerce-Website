@@ -8,6 +8,7 @@ import Instawall from "./Instagramwall";
 import Footer from "./Footer";
 import BannerPage from "./Banner";
 import SparkleItem from "./SparkleShop";
+import Faq from "./Faq";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Unleash />
       <Unique />
       <Article />
+      <Faq/>
       <Instawall />
       <Footer />
     </>

@@ -1,5 +1,6 @@
 import React from "react";
 import Search from "./Search";
+import { Link } from "react-router-dom";
 import { FaBars, FaCaretDown } from "react-icons/fa";
 import { FaCartShopping, FaUser } from "react-icons/fa6";
 
@@ -21,7 +22,9 @@ export default function NavBar() {
                 <a href="">Shop</a>
               </li>
               <li className="transition ease-in-out delay-150 hover:underline hover:duration-100">
-                <a href="">About Us</a>
+                <Link to="/about">
+                  <a href="">About Us</a>
+                </Link>
               </li>
               <li className=" flex flex-row items-center justify-center transition ease-in-out delay-150 hover:underline hover:duration-100">
                 <a href="">Page</a>
