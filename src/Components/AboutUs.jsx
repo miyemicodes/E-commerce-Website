@@ -7,6 +7,8 @@ import Video from "./VideoFile";
 import Instawall from "./Instagramwall";
 import Footer from "./Footer";
 import Testimonial from "./Testimonial";
+import FAQAccordion from "./FAQAccordion";
+
 
 export default function AboutUs() {
   return (
@@ -17,6 +19,7 @@ export default function AboutUs() {
       <Vision />
       <Video />
       <Testimonial />
+      <FAQAccordion />
       <Instawall />
       <Footer />
     </>

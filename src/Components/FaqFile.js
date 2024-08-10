@@ -1,4 +1,4 @@
-const data = [
+const faqs = [
   {
     question: "What are accordion components ?",
     answer:
@@ -25,3 +25,5 @@ const data = [
       "Behind the scenes crafting Lavish perfection. They typically consist of a header,content, and an expand/collapse action.",
   },
 ];
+
+export default faqs;
