@@ -16,10 +16,14 @@ export default function NavBar() {
           <div className="hidden md:block">
             <ul className=" text-sm text-[#a5a5a5] font-semibold flex flex-row items-center justify-center gap-12 ">
               <li className="transition ease-in-out delay-150  hover:underline hover:duration-100">
-                <a href="">Home</a>
+                <Link to="/">
+                  <a href="">Home</a>
+                </Link>
               </li>
               <li className="transition ease-in-out delay-150 hover:underline hover:duration-100">
-                <a href="">Shop</a>
+                <Link to="/shop">
+                  <a href="">Shop</a>
+                </Link>
               </li>
               <li className="transition ease-in-out delay-150 hover:underline hover:duration-100">
                 <Link to="/about">

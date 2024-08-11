@@ -1,12 +1,12 @@
 import React from "react";
-import Property from "./Property";
-import Footer from "./Footer";
-import NavBar from "./NavBar";
-import Cover from "./CoverTop";
-import Button from "./ShopNow";
+import Property from "../Components/Property";
+import Footer from "../Components/Footer";
+import NavBar from "../Components/NavBar";
+import Cover from "../Components/CoverTop";
+import Button from "../Components/ShopNow";
 import productImage from "../assets/productDetail.jpg";
-import Testimonial from "./Testimonial";
-import Related from "./RelatedProduct";
+import Testimonial from "../Components/Testimonial";
+import Related from "../Components/RelatedProduct";
 
 export default function ProductDetails() {
   return (
@@ -105,7 +105,7 @@ export default function ProductDetails() {
 
         <Testimonial />
 
-        <Related/>
+        <Related />
         <Footer />
       </section>
     </>
