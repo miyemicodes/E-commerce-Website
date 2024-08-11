@@ -8,6 +8,7 @@ import sparkleImage3 from "../assets/instapage-image-bracelet.jpg";
 import sparkleImage4 from "../assets/sparkle4.jpg";
 import sparkleImage5 from "../assets/sparklepage-image-2.jpg";
 
+
 export default function SparkleItem() {
   return (
     <>
