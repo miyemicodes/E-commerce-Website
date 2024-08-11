@@ -1,101 +1,60 @@
-import React from "react";
-import { FaArrowRight, FaCaretLeft, FaCaretRight } from "react-icons/fa";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import sparkleImage1 from "../assets/sparkle-1.jpg";
-import sparkleImage2 from "../assets/sparkle-2.jpg";
-import sparkleImage3 from "../assets/instapage-image-bracelet.jpg";
-import sparkleImage4 from "../assets/sparkle4.jpg";
-import sparkleImage5 from "../assets/sparklepage-image-2.jpg";
+import React, { useState } from "react";
+import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
 
+export default function SparkleItem({ images }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-export default function SparkleItem() {
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 4 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === images.length - 4 ? 0 : prevIndex + 1
+    );
+  };
+
   return (
     <>
-      <section className="hidden  px-16 py-8 bg-[#fffffc]overflow-hidden  md:block">
+      <section className="hidden relative px-16 py-8 bg-[#fffffc] md:block">
         <h1 className="text-2xl font-semibold font-serif text-center pb-3">
           Sparkle in Love
         </h1>
 
-        <div className="flex flex-row items-center justify-center gap-3 relative">
-          
-          <div>
-            <div className="w-[200px]">
-              <img src={sparkleImage1} className="w-full object-cover" />
-            </div>
-
-            <div className="flex flex-row items-center justify-between">
-              <p className="font-semibold">Necklaces</p>
-              <button className="border-none font-light text-sm flex flex-row items-center justify-center gap-2">
-                <p>Explore</p>
-                <FaArrowRight />
-              </button>
-            </div>
-          </div>
-
-          <div>
-            <div className="w-[200px] ">
-              <img src={sparkleImage2} className="w-full object-cover" />
-            </div>
-
-            <div className="flex flex-row items-center justify-between">
-              <p className="font-semibold">Earrings</p>
-              <button className="border-none font-light text-sm flex flex-row items-center justify-center gap-2">
-                <p>Explore</p>
-                <FaArrowRight />
-              </button>
+        <div className="relative max-w-4xl mx-auto">
+          <div className="overflow-hidden">
+            <div
+              className="flex  transition-transform duration-500"
+              style={{ transform: `translateX(-${currentIndex * 25}%)` }}
+            >
+              {images.map((image, index) => (
+                <div key={index} className="min-w-1/4 p-2">
+                  <img
+                    src={image}
+                    alt={`Product ${index}`}
+                    className="w-full h-64 object-cover rounded-md"
+                  />
+                </div>
+              ))}
             </div>
           </div>
-
-          <div>
-            <div className="w-[200px]">
-              <img src={sparkleImage3} className="w-full object-cover" />
-            </div>
-
-            <div className="flex flex-row items-center justify-between">
-              <p className="font-semibold">Bracelet</p>
-              <button className="border-none font-light text-sm flex flex-row items-center justify-center gap-2">
-                <p>Explore</p>
-                <FaArrowRight />
-              </button>
-            </div>
-          </div>
-
-          <div>
-            <div className="w-[200px] ">
-              <img src={sparkleImage4} className="w-full object-cover" />
-            </div>
-
-            <div className="flex flex-row items-center justify-between">
-              <p className="font-semibold">Ring</p>
-              <button className="border-none font-light text-sm flex flex-row items-center justify-center gap-2">
-                <p>Explore</p>
-                <FaArrowRight />
-              </button>
-            </div>
-          </div>
-
-          <div>
-            <div className="w-[200px]">
-              <img src={sparkleImage5} className="w-full object-cover" />
-            </div>
-
-            <div className="flex flex-row items-center justify-between">
-              <p className="font-semibold">Pendant</p>
-              <button className="border-none font-light text-sm flex flex-row items-center justify-center gap-2">
-                <p>Explore</p>
-                <FaArrowRight />
-              </button>
-            </div>
-          </div>
-
-          <button className="text-xl absolute right-[5px]">
-            <FaCaretRight />
-          </button>
-          <button className="text-xl absolute left-0">
-            <FaCaretLeft />
-          </button>
         </div>
+
+        <button
+          onClick={handlePrev}
+          className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2"
+        >
+          <FaCaretLeft />
+        </button>
+
+        <button
+          onClick={handleNext}
+          className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2"
+        >
+          <FaCaretRight />
+        </button>
       </section>
     </>
   );
