@@ -8,7 +8,7 @@ export default function NavBar() {
   return (
     <>
       <section className="border-b-2">
-        <div className="bg-[#fbf3e2] sm:px-16 flex flex-row items-center justify-between px-24 py-4 ">
+        <div className="bg-[#fbf3e2] px-16 flex flex-row items-center justify-center gap-10 md:px-14 lg:px-16 py-4 ">
           <div className=" flex flex-row items-center justify-center w-8 py-2 px-1 border rounded-2xl border-[#c0bebe] md:hidden">
             <FaBars className="text-[#a5a5a5] " />
           </div>
@@ -44,7 +44,7 @@ export default function NavBar() {
           <div className="flex flex-row items-center justify-center gap-5">
             <Search />
 
-            <div className="text-xl text-[#967f50] flex flex-row items-center justify-center gap-3">
+            <div className="text-xl text-[#967f50] flex flex-row items-center justify-center gap-5">
               <FaCartShopping />
               <FaUser />
             </div>

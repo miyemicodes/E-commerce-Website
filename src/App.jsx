@@ -4,6 +4,7 @@ import AboutUs from "./Pages/AboutUs";
 import Home from "./Pages/Home";
 import ProductDetails from "./Pages/ProductDetail";
 import Shop from "./Pages/Shop";
+import User from "./Pages/Userprofile";
 
 function App() {
   return (
@@ -11,9 +12,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/productdetail" Component={ProductDetails} />
-          <Route path="/about" Component={AboutUs} />
+          <Route path="/productdetail" element={<ProductDetails />} />
+          <Route path="/about" element={<AboutUs />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/User" element={<User />} />
         </Routes>
       </BrowserRouter>
     </>
