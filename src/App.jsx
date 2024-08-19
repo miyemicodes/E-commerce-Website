@@ -5,11 +5,13 @@ import Home from "./Pages/Home";
 import ProductDetails from "./Pages/ProductDetail";
 import Shop from "./Pages/Shop";
 import User from "./Pages/Userprofile";
+import NavBar from "./Components/NavBar";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/productdetail" element={<ProductDetails />} />

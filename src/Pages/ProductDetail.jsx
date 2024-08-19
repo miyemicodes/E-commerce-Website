@@ -1,7 +1,6 @@
 import React from "react";
 import Property from "../Components/Property";
 import Footer from "../Components/Footer";
-import NavBar from "../Components/NavBar";
 import Cover from "../Components/CoverTop";
 import Button from "../Components/ShopNow";
 import productImage from "../assets/productDetail.jpg";
@@ -12,16 +11,16 @@ export default function ProductDetails() {
   return (
     <>
       <section>
-        <NavBar />
         <Cover />
 
-        <div className="py-10 px-24 flex flex-col items-center justify-center gap-8 md:flex-row  md:px-18">
+        <div className="py-10 px-6 flex flex-col items-center justify-center gap-8 md:flex-row  md:px-18">
+          
           <div className="grid grid-cols-1 gap-3 flex-1">
             <img
               src={productImage}
               className=" w-full h-[500px] object-cover object-top"
             />
-            <div className="flex flex-row items-start gap-3 w-[600px] ">
+            <div className="flex flex-col items-start gap-3 w-[100px] ">
               <img
                 src={productImage}
                 className="w-[100px] h-40 flex-1 object-cover object-top"
@@ -77,7 +76,7 @@ export default function ProductDetails() {
 
         <Property />
 
-        <div className="py-6 px-24 text-left">
+        <div className="py-6 px-8 text-left">
           <div className="flex items-start justify-start gap-3 py-6">
             <button className="border font-semibold px-2 py-1 rounded-md hover:text-white hover:bg-[#967f50]">
               Description

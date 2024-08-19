@@ -8,7 +8,7 @@ import articleImage3 from "../assets/article-image-3.jpg";
 export default function Related() {
   return (
     <>
-      <section className="py-8 px-24">
+      <section className="py-8 px-6">
         <div className="flex items-center justify-between pb-10">
           <h2 className="font-serif text-3xl pb-4"> Related Products</h2>
 

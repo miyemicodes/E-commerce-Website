@@ -8,9 +8,9 @@ import { FaMediumM } from "react-icons/fa";
 export default function Footer() {
   return (
     <>
-      <section className="flex flex-col bg-[#fbf3e2] border-t-[#fbe8d7] border-t-4 ">
-        <div className="px-16 py-4 flex flex-wrap items-start gap-6 ">
-          <div className="flex flex-1 flex-col gap-4 text-sm">
+      <div className="flex flex-col bg-[#fbf3e2] border-t-[#fbe8d7] border-t-4">
+        <div className="px-10 py-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start gap-6 ">
+          <div className="flex flex-col gap-4 text-sm">
             <div className="flex flex-col gap-2">
               <h3 className="font-semibold ">Where about</h3>
               <p className="text-[#888783]">
@@ -27,23 +27,25 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-1 items-center justify-between gap-12 text-sm">
+          <div className="flex flex-row flex-wrap items-start justify-between gap-8">
             <ul className="flex flex-col gap-1">
-              <li className="font-semibold ">Pages</li>
+              <li className="font-semibold md:text-lg">Pages</li>
               <li className="text-[#888783]">About us</li>
               <li className="text-[#888783]">Categories</li>
               <li className="text-[#888783]">Shop</li>
               <li className="text-[#888783]">Contact us</li>
             </ul>
+
             <ul>
-              <li className="font-semibold ">Resource</li>
+              <li className="font-semibold md:text-lg">Resource</li>
               <li className="text-[#888783]">FAQ</li>
               <li className="text-[#888783]">Reviews</li>
               <li className="text-[#888783]">Blogs</li>
               <li className="text-[#888783]">Return Policy</li>
             </ul>
+
             <ul>
-              <li className="font-semibold ">Utilities</li>
+              <li className="font-semibold md:text-lg">Utilities</li>
               <li className="text-[#888783]">Style Guide</li>
               <li className="text-[#888783]">Error 404</li>
               <li className="text-[#888783]">Lincensing</li>
@@ -51,26 +53,26 @@ export default function Footer() {
             </ul>
           </div>
 
-          <form className="flex flex-col text-sm flex-1 items-center gap-3">
-            <h1 className="font-semibold">Subscribe</h1>
+          <form className="w-full flex flex-col items-center gap-3">
+            <h1 className="font-semibold text-lg">Subscribe</h1>
 
             <input
               type="text"
               placeholder="Enter your name"
-              className="bg-transparent p-2 w-[60%] border border-[#967f5048] rounded-full"
+              className="bg-transparent p-2 w-full border border-[#967f5048] rounded-full"
             />
             <input
               type="email"
               placeholder="Enter email"
-              className="bg-transparent p-2 w-[60%] border border-[#967f5048] rounded-full"
+              className="bg-transparent p-2 w-full border border-[#967f5048] rounded-full"
             />
-            <button className="bg-[#967f50] text-white py-2 px-16 w-[60%] rounded-full">
+            <button className="bg-[#967f50] w-full text-white py-2 px-16 rounded-full font-semibold">
               Submit
             </button>
           </form>
         </div>
 
-        <div className=" px-16 py-4 bg-[#0b0b0a] flex flex-wrap items-center justify-between">
+        <div className=" px-12 py-4 bg-[#0b0b0a] flex flex-wrap items-center justify-between gap-2">
           <div className="text-white text-sm">
             &copy;2024 YesEl Company Limited. All Rights Reserved.
           </div>
@@ -111,7 +113,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-      </section>
+      </div>
     </>
   );
 }

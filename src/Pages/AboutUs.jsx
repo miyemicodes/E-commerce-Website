@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "../Components/NavBar";
 import Cover from "../Components/CoverTop";
 import Property from "../Components/Property";
 import Vision from "../Components/Vision";
@@ -13,7 +12,6 @@ import Team from "../Components/Team";
 export default function AboutUs() {
   return (
     <>
-      <NavBar />
       <Cover />
       <Property />
       <Vision />

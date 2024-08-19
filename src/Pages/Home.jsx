@@ -1,5 +1,4 @@
 import React from "react";
-import NavBar from "../Components/NavBar";
 import Property from "../Components/Property";
 import Unleash from "../Components/Unleash";
 import Unique from "../Components/Uniquestyles";
@@ -25,7 +24,6 @@ export default function Home() {
 
   return (
     <>
-      <NavBar />
       <BannerPage />
       <Property />
       <SparkleItem images={productImages} />
