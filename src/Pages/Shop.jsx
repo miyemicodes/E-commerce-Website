@@ -4,12 +4,14 @@ import Property from "../Components/Property";
 import Instawall from "../Components/Instagramwall";
 import Footer from "../Components/Footer";
 import ProductCategory from "../Components/Category";
+import Related from "../Components/RelatedProduct";
 
 export default function Shop() {
   return <>
     <Cover />
     <Property />
-    <ProductCategory/>
+    <ProductCategory />
+    <Related/>
     <Instawall />
     <Footer/>
   </>;

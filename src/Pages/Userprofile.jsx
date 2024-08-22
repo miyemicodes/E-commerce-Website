@@ -6,6 +6,7 @@ import { GiSelfLove } from "react-icons/gi";
 import { BsCart4 } from "react-icons/bs";
 import { RiNewsLine } from "react-icons/ri";
 import { MdOutlineManageAccounts } from "react-icons/md";
+import { CartCard } from "../Components/CART/CartCard";
 
 export default function User() {
   return (
@@ -153,6 +154,7 @@ export default function User() {
           </div>
         </div>
       </div>
+      <CartCard/>
     </>
   );
 }

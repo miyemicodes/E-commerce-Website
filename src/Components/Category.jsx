@@ -20,9 +20,9 @@ import { FaStarHalf } from "react-icons/fa";
 export default function ProductCategory() {
   return (
     <>
-      <section className="py-10 px-6 flex flex-row gap-3 bg-transparent">
-        <div className="hidden  lg:flex flex-col gap-5 w-[20%]">
-          <div className="flex-col items-start justify-start">
+      <section className="py-10 px-2 flex flex-row gap-3 bg-transparent w-full">
+        <div className="hidden  lg:flex flex-col  gap-5 w-[20%]">
+          <div className="flex-col items-start justify-start border p-1 rounded-lg">
             <h2 className="text-xl px-2 py-1 font-serif font-semibold">
               Product By Category
             </h2>
@@ -37,7 +37,7 @@ export default function ProductCategory() {
             </ul>
           </div>
 
-          <div className="flex-col items-start justify-start">
+          <div className="flex-col items-start justify-start border p-1 rounded-lg">
             <h2 className="text-xl px-2 py-1 font-serif font-semibold">
               Brand By Category
             </h2>
@@ -49,7 +49,7 @@ export default function ProductCategory() {
             </ul>
           </div>
 
-          <div className="flex-col items-start justify-start">
+          <div className="flex-col items-start justify-start border p-1 rounded-lg">
             <h2 className="text-xl px-2 py-1 font-serif font-semibold">
               Price
             </h2>
@@ -66,9 +66,10 @@ export default function ProductCategory() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-2 w-[80%] py-4">
-          <div className="flex items-center justify-between">
+        <div className="flex flex-col justify-center gap-6 w-full lg:w-[80%] py-4">
+          <div className="flex items-center justify-between px-8">
             <Search />
+
             <div className="flex gap-2">
               <button>
                 <FaCircleArrowLeft className="text-white bg-black rounded-full text-xl" />
@@ -80,16 +81,16 @@ export default function ProductCategory() {
             </div>
           </div>
 
-          <div className="grid items-center justify-center md:grid-cols-2 lg:grid-cols-3 gap-3">
-            <div className="flex flex-col items-center justify-start gap-2 border  rounded-md w-[300px] px-1">
-              <div className="h-[250px] w-[300px]">
+          <div className="w-full grid items-center justify-center md:grid-cols-2 lg:grid-cols-3 gap-4 px-8">
+            <div className="flex flex-col items-center justify-start gap-4 border rounded-md w-[300px] lg:w-[220px] px-1">
+              <div className="h-[250px]  w-[300px] lg:w-[220px]">
                 <img
                   src={instaImage2}
-                  className="rounded-md h-[250px] w-[300px] object-cover"
+                  className="rounded-md h-[250px] w-[300px] lg:w-[220px] object-cover"
                 />
               </div>
 
-              <div className="flex flex-col gap-2 w-[300px] px-2">
+              <div className="flex flex-col gap-2 w-[300px] lg:w-[220px] px-2">
                 <div className="flex flex-row items-center justify-between">
                   <p className="font-semibold font-sans"> Necklaces</p>
 
@@ -106,15 +107,15 @@ export default function ProductCategory() {
               </div>
             </div>
 
-            <div className="flex flex-col items-center justify-start gap-2 border  rounded-md w-[300px] px-1">
-              <div className="h-[250px] w-[300px]">
+            <div className="flex flex-col items-center justify-start gap-4 border  rounded-md  w-[300px] lg:w-[220px] px-1">
+              <div className="h-[250px] w-[300px] lg:w-[220px]">
                 <img
                   src={sparkleImage1}
-                  className="rounded-md h-[250px] w-[300px] object-cover"
+                  className="rounded-md h-[250px]  w-[300px] lg:w-[220px] object-cover"
                 />
               </div>
 
-              <div className="flex flex-col gap-2 w-[300px] px-2">
+              <div className="flex flex-col gap-2 w-[300px] lg:w-[220px] px-2">
                 <div className="flex flex-row items-center justify-between">
                   <p className="font-semibold font-sans"> Necklaces</p>
 
@@ -131,15 +132,15 @@ export default function ProductCategory() {
               </div>
             </div>
 
-            <div className="flex flex-col items-center justify-start gap-2 border  rounded-md w-[300px] px-1">
-              <div className="h-[250px] w-[300px]">
+            <div className="flex flex-col items-center justify-start gap-4 border  rounded-md  w-[300px] lg:w-[220px] px-1">
+              <div className="h-[250px]  w-[300px] lg:w-[220px]">
                 <img
                   src={sparkleImage3}
-                  className="rounded-md h-[250px] w-[300px] object-cover"
+                  className="rounded-md h-[250px]  w-[300px] lg:w-[220px] object-cover"
                 />
               </div>
 
-              <div className="flex flex-col gap-2 w-[300px] px-2">
+              <div className="flex flex-col gap-2  w-[300px] lg:w-[220px] px-2">
                 <div className="flex flex-row items-center justify-between">
                   <p className="font-semibold font-sans"> Necklaces</p>
 
@@ -156,15 +157,15 @@ export default function ProductCategory() {
               </div>
             </div>
 
-            <div className="flex flex-col items-center justify-start gap-2 border  rounded-md w-[300px] px-1">
-              <div className="h-[250px] w-[300px]">
+            <div className="flex flex-col items-center justify-start gap-4 border  rounded-md w-[300px] lg:w-[220px] px-1">
+              <div className="h-[250px] w-[300px] lg:w-[220px]">
                 <img
                   src={instaImage3}
-                  className="rounded-md h-[250px] w-[300px] object-cover"
+                  className="rounded-md h-[250px] w-[300px] lg:w-[220px] object-cover"
                 />
               </div>
 
-              <div className="flex flex-col gap-2 w-[300px] px-2">
+              <div className="flex flex-col gap-2 w-[300px] lg:w-[220px] px-2">
                 <div className="flex flex-row items-center justify-between">
                   <p className="font-semibold font-sans"> Necklaces</p>
 
@@ -181,15 +182,15 @@ export default function ProductCategory() {
               </div>
             </div>
 
-            <div className="flex flex-col items-center justify-start gap-2 border  rounded-md w-[300px] px-1">
-              <div className="h-[250px] w-[300px]">
+            <div className="flex flex-col items-center justify-start gap-4 border  rounded-md w-[300px] lg:w-[220px] px-1">
+              <div className="h-[250px] w-[300px] lg:w-[220px]">
                 <img
                   src={sparkleImage5}
-                  className="rounded-md h-[250px] w-[300px] object-cover"
+                  className="rounded-md h-[250px] w-[300px] lg:w-[220px] object-cover"
                 />
               </div>
 
-              <div className="flex flex-col gap-2 w-[300px] px-2">
+              <div className="flex flex-col gap-2 w-[300px] lg:w-[220px] px-2">
                 <div className="flex flex-row items-center justify-between">
                   <p className="font-semibold font-sans"> Necklaces</p>
 
@@ -206,15 +207,15 @@ export default function ProductCategory() {
               </div>
             </div>
 
-            <div className="flex flex-col items-center justify-start gap-2 border  rounded-md w-[300px] px-1">
-              <div className="h-[250px] w-[300px]">
+            <div className="flex flex-col items-center justify-start gap-4 border  rounded-md w-[300px] lg:w-[220px] px-1">
+              <div className="h-[250px] w-[300px] lg:w-[220px]">
                 <img
                   src={sparkleImage2}
-                  className="rounded-md h-[250px] w-[300px] object-cover"
+                  className="rounded-md h-[250px] w-[300px] lg:w-[220px] object-cover"
                 />
               </div>
 
-              <div className="flex flex-col gap-2 w-[300px] px-2">
+              <div className="flex flex-col gap-2 w-[300px] lg:w-[220px] px-2">
                 <div className="flex flex-row items-center justify-between">
                   <p className="font-semibold font-sans"> Necklaces</p>
 
@@ -231,15 +232,15 @@ export default function ProductCategory() {
               </div>
             </div>
 
-            <div className="flex flex-col items-center justify-start gap-2 border  rounded-md w-[300px] px-1">
-              <div className="h-[250px] w-[300px]">
+            <div className="flex flex-col items-center justify-start gap-4 border  rounded-md w-[300px] lg:w-[220px] px-1">
+              <div className="h-[250px] w-[300px] lg:w-[220px]">
                 <img
                   src={instaImage4}
-                  className="rounded-md h-[250px] w-[300px] object-cover"
+                  className="rounded-md h-[250px] w-[300px] lg:w-[220px] object-cover"
                 />
               </div>
 
-              <div className="flex flex-col gap-2 w-[300px] px-2">
+              <div className="flex flex-col gap-2 w-[300px] lg:w-[220px] px-2">
                 <div className="flex flex-row items-center justify-between">
                   <p className="font-semibold font-sans"> Necklaces</p>
 
@@ -256,15 +257,15 @@ export default function ProductCategory() {
               </div>
             </div>
 
-            <div className="flex flex-col items-center justify-start gap-2 border  rounded-md w-[300px] px-1">
-              <div className="h-[250px] w-[300px]">
+            <div className="flex flex-col items-center justify-start gap-4 border  rounded-md w-[300px] lg:w-[220px] px-1">
+              <div className="h-[250px] w-[300px] lg:w-[220px]">
                 <img
                   src={instaImage1}
-                  className="rounded-md h-[250px] w-[300px] object-cover"
+                  className="rounded-md h-[250px] w-[300px] lg:w-[220px] object-cover"
                 />
               </div>
 
-              <div className="flex flex-col gap-2 w-[300px] px-2">
+              <div className="flex flex-col gap-2 w-[300px] lg:w-[220px] px-2">
                 <div className="flex flex-row items-center justify-between">
                   <p className="font-semibold font-sans"> Necklaces</p>
 
@@ -281,15 +282,140 @@ export default function ProductCategory() {
               </div>
             </div>
 
-            <div className="flex flex-col items-center justify-start gap-2 border  rounded-md w-[300px] px-1">
-              <div className="h-[250px] w-[300px]">
+            <div className="flex flex-col items-center justify-start gap-4 border  rounded-md w-[300px] lg:w-[220px] px-1">
+              <div className="h-[250px] w-[300px] lg:w-[220px]">
                 <img
                   src={sparkleImage4}
-                  className="rounded-md h-[250px] w-[300px] object-cover"
+                  className="rounded-md h-[250px] w-[300px] lg:w-[220px] object-cover"
                 />
               </div>
 
-              <div className="flex flex-col gap-2 w-[300px] px-2">
+              <div className="flex flex-col gap-2 w-[300px] lg:w-[220px] px-2">
+                <div className="flex flex-row items-center justify-between">
+                  <p className="font-semibold font-sans"> Necklaces</p>
+
+                  <div className="flex items-center justify-center gap-2">
+                    <span>4.5</span>
+                    <FaStarHalf className="text-yellow-500" />
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between gap-2">
+                  <p className="font-semibold text-lg">$95.00</p>
+                  <FaCartShopping className="bg-transparent text-black text-lg " />
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center justify-start gap-4 border  rounded-md w-[300px] lg:w-[220px] px-1">
+              <div className="h-[250px] w-[300px] lg:w-[220px]">
+                <img
+                  src={sparkleImage4}
+                  className="rounded-md h-[250px] w-[300px] lg:w-[220px] object-cover"
+                />
+              </div>
+
+              <div className="flex flex-col gap-2 w-[300px] lg:w-[220px] px-2">
+                <div className="flex flex-row items-center justify-between">
+                  <p className="font-semibold font-sans"> Necklaces</p>
+
+                  <div className="flex items-center justify-center gap-2">
+                    <span>4.5</span>
+                    <FaStarHalf className="text-yellow-500" />
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between gap-2">
+                  <p className="font-semibold text-lg">$95.00</p>
+                  <FaCartShopping className="bg-transparent text-black text-lg " />
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center justify-start gap-4 border  rounded-md w-[300px] lg:w-[220px] px-1">
+              <div className="h-[250px] w-[300px] lg:w-[220px]">
+                <img
+                  src={sparkleImage4}
+                  className="rounded-md h-[250px] w-[300px] lg:w-[220px] object-cover"
+                />
+              </div>
+
+              <div className="flex flex-col gap-2 w-[300px] lg:w-[220px] px-2">
+                <div className="flex flex-row items-center justify-between">
+                  <p className="font-semibold font-sans"> Necklaces</p>
+
+                  <div className="flex items-center justify-center gap-2">
+                    <span>4.5</span>
+                    <FaStarHalf className="text-yellow-500" />
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between gap-2">
+                  <p className="font-semibold text-lg">$95.00</p>
+                  <FaCartShopping className="bg-transparent text-black text-lg " />
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center justify-start gap-4 border  rounded-md w-[300px] lg:w-[220px] px-1">
+              <div className="h-[250px] w-[300px] lg:w-[220px]">
+                <img
+                  src={sparkleImage4}
+                  className="rounded-md h-[250px] w-[300px] lg:w-[220px] object-cover"
+                />
+              </div>
+
+              <div className="flex flex-col gap-2 w-[300px] lg:w-[220px] px-2">
+                <div className="flex flex-row items-center justify-between">
+                  <p className="font-semibold font-sans"> Necklaces</p>
+
+                  <div className="flex items-center justify-center gap-2">
+                    <span>4.5</span>
+                    <FaStarHalf className="text-yellow-500" />
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between gap-2">
+                  <p className="font-semibold text-lg">$95.00</p>
+                  <FaCartShopping className="bg-transparent text-black text-lg " />
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center justify-start gap-4 border  rounded-md w-[300px] lg:w-[220px] px-1">
+              <div className="h-[250px] w-[300px] lg:w-[220px]">
+                <img
+                  src={instaImage1}
+                  className="rounded-md h-[250px] w-[300px] lg:w-[220px] object-cover"
+                />
+              </div>
+
+              <div className="flex flex-col gap-2 w-[300px] lg:w-[220px] px-2">
+                <div className="flex flex-row items-center justify-between">
+                  <p className="font-semibold font-sans"> Necklaces</p>
+
+                  <div className="flex items-center justify-center gap-2">
+                    <span>4.5</span>
+                    <FaStarHalf className="text-yellow-500" />
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-between gap-2">
+                  <p className="font-semibold text-lg">$95.00</p>
+                  <FaCartShopping className="bg-transparent text-black text-lg " />
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center justify-start gap-4 border  rounded-md  w-[300px] lg:w-[220px] px-1">
+              <div className="h-[250px]  w-[300px] lg:w-[220px]">
+                <img
+                  src={sparkleImage3}
+                  className="rounded-md h-[250px]  w-[300px] lg:w-[220px] object-cover"
+                />
+              </div>
+
+              <div className="flex flex-col gap-2  w-[300px] lg:w-[220px] px-2">
                 <div className="flex flex-row items-center justify-between">
                   <p className="font-semibold font-sans"> Necklaces</p>
 
@@ -306,6 +432,7 @@ export default function ProductCategory() {
               </div>
             </div>
           </div>
+
         </div>
       </section>
     </>
