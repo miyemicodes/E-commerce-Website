@@ -26,7 +26,7 @@ export default function Related() {
         <div className="grid md:grid-cols-2 items-center justify-center gap-1 w-full lg:grid-cols-4">
           
           <div className="flex flex-col items-start justify-start gap-2">
-            <div className="h-[300px] w-[250px]">
+            <div className="h-[300px] w-[250px] ">
               <img
                 src={instaImage1}
                 className="rounded-md h-[300px] w-[250px] object-cover"
