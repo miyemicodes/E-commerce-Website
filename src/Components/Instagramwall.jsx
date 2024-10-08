@@ -15,35 +15,39 @@ export default function Instawall() {
 				<h3 className="text-sm md:text-base lg:text-lg font-normal text-center pb-12">
 					Follow us on instagram and be a part of our sparkling story
 				</h3>
-				<div className="grid grid-cols-3 gap-1 h-full">
-					<div className="gri">
+				<div className="grid grid-cols-4 grid-rows-3 h-[500px] bg-blue-600">
+					<div className="[grid-area:1/1/2/3]">
 						<img
 							src={instaImage1}
-							className="object-cover rounded-md"
+							className="object-cover"
 						/>
 					</div>
-					<div className="">
+
+					<div className="[grid-area:1/3/2/4]">
 						<img
 							src={instaImage2}
-							className="object-cover rounded-md"
+							className="object-cover h-full"
 						/>
 					</div>
-					<div className="">
+
+					<div className="[grid-area:1/4/3/5]">
 						<img
 							src={instaImage5}
-							className="object-cover rounded-md"
+							className="object-cover h-full"
 						/>
 					</div>
-					<div className="">
+
+					<div className="[grid-area:2/1/3/4]">
 						<img
 							src={instaImage4}
-							className="object-cover rounded-md"
+							className="object-cover"
 						/>
 					</div>
-					<div className="cols-span-2">
+
+					<div className="[grid-area:3/1/3/5] h-full">
 						<img
 							src={instaImage3}
-							className="object-cover rounded-md"
+							className="object-cover h-full w-full"
 						/>
 					</div>
 				</div>
