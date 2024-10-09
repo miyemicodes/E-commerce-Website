@@ -52,7 +52,9 @@ export default function NavBar() {
 
 					<div className="text-xl text-[#967f50] flex flex-row items-center justify-center gap-5">
 						<FaCartShopping />
-						<FaUser />
+						<Link to="/User">
+							<FaUser />
+						</Link>
 					</div>
 				</div>
 			</div>
