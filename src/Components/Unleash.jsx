@@ -19,8 +19,8 @@ export default function Unleash() {
 				<div
 					data-aos="flip-left"
 					data-aos-easing="ease-out-cubic"
-					data-aos-duration="2000"
-					className="hidden md:block flex-1 rounded-md"
+					data-aos-duration="2500"
+					className="hidden md:block md:w-[500px] md:h-[500px] flex-1 rounded-md"
 				>
 					<img
 						src={featuredImage1}

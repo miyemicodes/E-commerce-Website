@@ -14,7 +14,10 @@ export default function Testimonial() {
 					</h1>
 
 					<div className="flex flex-row items-start justify-center gap-3 py-10 lg:px-20">
-						<div className="flex flex-col items-start justify-start gap-3 w-[200px]">
+						<div
+							data-aos="fade-right"
+							className="flex flex-col items-start justify-start gap-3 w-[200px]"
+						>
 							<div className="h-[500px] w-[200px]">
 								<img
 									src={testiImages1}
@@ -28,7 +31,11 @@ export default function Testimonial() {
 							</div>
 						</div>
 
-						<div className="flex flex-col items-start justify-start gap-3 w-[200px] ">
+						<div
+							data-aos="fade-up"
+							data-aos-delay="1000"
+							className="flex flex-col items-start justify-start gap-3 w-[200px] "
+						>
 							<div className="h-[500px] w-[200px]">
 								<img
 									src={testiImages3}
@@ -42,7 +49,10 @@ export default function Testimonial() {
 							</div>
 						</div>
 
-						<div className="flex flex-col items-start justify-start gap-3 grow">
+						<div
+							data-aos="fade-left"
+							className="flex flex-col items-start justify-start gap-3 grow"
+						>
 							<div className="h-[500px] w-full">
 								<img
 									src={testiImages2}

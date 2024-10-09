@@ -39,7 +39,11 @@ export default function NavBar() {
 					</ul>
 				</div>
 
-				<div className="text-[#272727] font-serif text-2xl font-semibold">
+				<div
+					data-aos-delay="700"
+					data-aos="zoom-in"
+					className="text-[#272727] font-serif text-2xl font-semibold"
+				>
 					<h1>YesEl</h1>
 				</div>
 

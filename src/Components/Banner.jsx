@@ -31,7 +31,7 @@ export default function BannerPage() {
 					</p>
 
 					<div className="w-[90%] flex flex-row items-center justify-center gap-9 md:justify-start lg:justify-between">
-						<Button data-aos="fade-up-right" />
+						<Button />
 
 						<img
 							src={qualityImage}
