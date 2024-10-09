@@ -20,6 +20,7 @@ export default function Instawall() {
 					<div className="[grid-area:1/1/2/3]">
 						<img
 							src={instaImage1}
+							data-aos="zoom-in-right"
 							className="object-cover h-full w-full"
 						/>
 					</div>
@@ -41,6 +42,7 @@ export default function Instawall() {
 					<div className="[grid-area:2/1/3/4] ">
 						<img
 							src={instaImage4}
+							data-aos="fade-right"
 							className="object-cover h-full w-full"
 						/>
 					</div>
@@ -48,6 +50,7 @@ export default function Instawall() {
 					<div className="[grid-area:3/1/3/5] h-full">
 						<img
 							src={instaImage3}
+							data-aos="fade-down"
 							className="object-cover h-full w-full"
 						/>
 					</div>
