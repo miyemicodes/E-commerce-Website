@@ -8,18 +8,19 @@ import instaImage5 from "../assets/instapage-image-neckpiece.jpg";
 export default function Instawall() {
 	return (
 		<>
-			<div className="px-6 py-4 bg-[#fffffc]">
-				<h2 className="text-xl md:text-3xl lg:text-4xl font-semibold font-serif text-center pb-3">
+			<div className="flex flex-col items-center justify-center px-2 py-4 bg-[#fffffc]">
+				<h2 className="text-xl md:text-3xl lg:text-4xl font-semibold font-serif  pb-3">
 					Instagram Wall
 				</h2>
 				<h3 className="text-sm md:text-base lg:text-lg font-normal text-center pb-12">
 					Follow us on instagram and be a part of our sparkling story
 				</h3>
-				<div className="grid grid-cols-4 grid-rows-3 h-[500px] bg-blue-600">
+
+				<div className="grid grid-cols-4 grid-rows-3 gap-2 h-[500px] w-[330px] md:w-[500px] lg:h-[700px] lg:w-[700px] ">
 					<div className="[grid-area:1/1/2/3]">
 						<img
 							src={instaImage1}
-							className="object-cover"
+							className="object-cover h-full w-full"
 						/>
 					</div>
 
@@ -37,10 +38,10 @@ export default function Instawall() {
 						/>
 					</div>
 
-					<div className="[grid-area:2/1/3/4]">
+					<div className="[grid-area:2/1/3/4] ">
 						<img
 							src={instaImage4}
-							className="object-cover"
+							className="object-cover h-full w-full"
 						/>
 					</div>
 
