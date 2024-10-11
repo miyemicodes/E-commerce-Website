@@ -5,16 +5,16 @@ import Button from "./ShopNow";
 export default function Unique() {
 	return (
 		<>
-			<div className="bg-[#fbf3e2] grid grid-cols-2 items-center justify-center gap-3 py-14 px-8 h-full">
+			<div className="bg-[#fbf3e2] grid md:grid-cols-2 items-center justify-center gap-3 py-14 px-8 h-full">
 				<div
 					data-aos="flip-right"
 					data-aos-easing="ease-out-cubic"
 					data-aos-duration="2500"
-					className="hidden md:block rounded-lg md:w-[auto] lg:w-[500px] md:h-[500px]"
+					className="rounded-lg md:w-[auto] lg:w-[500px] md:h-[500px]"
 				>
 					<img
 						src={featuredImage}
-						className="md:w-[auto] lg:w-[500px] md:h-[500px] object-contain rounded-lg"
+						className="h-[400px] md:w-[auto] lg:w-[500px] md:h-[500px] object-contain rounded-lg"
 					/>
 				</div>
 
@@ -23,7 +23,7 @@ export default function Unique() {
 						Jewelry Unique Styles
 					</h2>
 
-					<p className="text-sm lg:w-[60%] lg:text-base">
+					<p className="text-sm lg:w-[80%] lg:text-base">
 						There are many variations of passages of Lorem20 Thank you for
 						taking the time to scroll through! We hope you enjoyed our content
 						and wish you a wonderful day. 😊

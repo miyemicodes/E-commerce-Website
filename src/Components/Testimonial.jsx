@@ -33,7 +33,7 @@ export default function Testimonial() {
 
 						<div
 							data-aos="fade-up"
-							data-aos-delay="1000"
+							data-aos-delay="500"
 							className="flex flex-col items-start justify-start gap-3 w-[200px] "
 						>
 							<div className="h-[500px] w-[200px]">

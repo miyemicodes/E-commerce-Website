@@ -5,10 +5,10 @@ import { FaBars, FaCaretDown, FaCross } from "react-icons/fa";
 import { FaCartShopping, FaUser } from "react-icons/fa6";
 
 export default function NavBar() {
-	const [navClicked, setNavClicked] = useState(false);
+	const [navOpen, setNavOpen] = useState(false);
 
 	const handleClick = () => {
-		setNavClicked();
+		setNavOpen(!navOpen);
 	};
 
 	return (
@@ -17,13 +17,16 @@ export default function NavBar() {
 				data-aos="fade-down"
 				className="border-b-2 p-5 bg-[#fbf3e2] flex w-[100%] items-center justify-between"
 			>
-				<div
-					// onClick={handleClick(navClicked)}
+				<button
+					onClick={handleClick}
 					className=" flex flex-row items-center justify-center w-8 py-2 px-1 border rounded-2xl border-[#c0bebe] md:hidden relative"
 				>
-					<FaBars className="text-[#a5a5a5] " />
-					<FaCross className="text-[#a5a5a5] absolute" />
-				</div>
+					{navOpen ? (
+						<FaCross className="text-[#a5a5a5]" />
+					) : (
+						<FaBars className="text-[#a5a5a5] absolute" />
+					)}
+				</button>
 
 				<div className="hidden md:block">
 					<ul className=" text-sm text-[#a5a5a5] font-semibold flex flex-row items-center justify-center gap-12 ">
@@ -61,7 +64,11 @@ export default function NavBar() {
 					<Search />
 
 					<div className="text-xl text-[#967f50] flex flex-row items-center justify-center gap-5">
-						<FaCartShopping />
+						{/* /productdetail for texting and designing of the product details page ,navigating to it */}
+						<Link to="/productdetail">
+							<FaCartShopping />
+						</Link>
+
 						<Link to="/User">
 							<FaUser />
 						</Link>
@@ -69,8 +76,8 @@ export default function NavBar() {
 				</div>
 			</div>
 
-			<div className="block md:hidden bg-[#faf9f8f3]">
-				<ul className=" text-sm text-[#a5a5a5] font-semibold flex flex-col items-center justify-center gap-3 pb-4">
+			{navOpen && (
+				<ul className="block md:hidden bg-[#faf9f8f3] text-sm text-[#a5a5a5] font-semibold flex flex-col items-center justify-center gap-3 pb-4">
 					<li className="transition ease-in-out delay-150  hover:text-white hover:bg-[#9e8e64] hover:duration-100 w-full p-2 ">
 						<Link to="/">
 							<p>Home</p>
@@ -94,7 +101,7 @@ export default function NavBar() {
 						<FaCaretDown />
 					</li>
 				</ul>
-			</div>
+			)}
 		</>
 	);
 }
