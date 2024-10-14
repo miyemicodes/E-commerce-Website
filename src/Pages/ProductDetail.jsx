@@ -14,7 +14,7 @@ export default function ProductDetails() {
 				<Cover />
 
 				<div className="lg:h-[600px] py-10 px-6 grid grid-cols-1 items-center justify-center gap-2 md:grid-cols-2  md:px-18">
-					<div className="grid grid-cols-4 grid-rows-3 gap-2 lg:h-[500px]">
+					<div className="grid grid-cols-4 grid-rows-3 gap-2 h-300px lg:h-[500px]">
 						<img
 							src={productImage}
 							className="h-full w-full object-cover object-top [grid-area:1/1/4/4]"

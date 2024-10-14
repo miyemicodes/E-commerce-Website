@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import emailjs from "emailjs-com";
 import { Link } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
@@ -7,6 +8,45 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaMediumM } from "react-icons/fa";
 
 export default function Footer() {
+	const [formData, setFormData] = useState({
+		name: "",
+		email: "",
+	});
+
+	const handleInputChange = (e) => {
+		const { name, value } = e.target;
+		setFormData({
+			...formData,
+			[name]: value,
+		});
+	};
+
+	const sendEmail = (e) => {
+		e.preventDefault();
+
+		emailjs
+			.send(
+				"service_vn4m2wy", // Replace with your EmailJS service ID
+				"template_nby1zxi", // Replace with your EmailJS template ID
+				formData, // Data to send (name, email, message)
+				"Jkf1CjDfXnqUxM1twcpKf" // Replace with your EmailJS user ID
+			)
+			.then(
+				(result) => {
+					console.log("Email successfully sent!", result.text);
+				},
+				(error) => {
+					console.error("Failed to send email. Error:", error.text);
+				}
+			);
+
+		// Reset form fields
+		setFormData({
+			name: "",
+			email: "",
+		});
+	};
+
 	return (
 		<>
 			<div className="flex flex-col bg-[#fbf3e2] border-t-[#fbe8d7] border-t-4">
@@ -31,47 +71,81 @@ export default function Footer() {
 					<div className="flex flex-row flex-wrap items-start justify-between gap-8">
 						<ul className="flex flex-col gap-1">
 							<li className="font-semibold md:text-lg">Pages</li>
-							<li className="text-[#888783]">
+							<li className="text-[#888783] hover:underline hover:duration-100">
 								<Link to="/about">
 									<a href="">About Us</a>
 								</Link>
 							</li>
-							<li className="text-[#888783]">Categories</li>
-							<li className="text-[#888783]">Shop</li>
-							<li className="text-[#888783]">Contact us</li>
+							<li className="text-[#888783] hover:underline hover:duration-100">
+								Categories
+							</li>
+							<li className="text-[#888783] hover:underline hover:duration-100">
+								Shop
+							</li>
+							<li className="text-[#888783] hover:underline hover:duration-100">
+								Contact us
+							</li>
 						</ul>
 
 						<ul>
 							<li className="font-semibold md:text-lg">Resource</li>
-							<li className="text-[#888783]">FAQ</li>
-							<li className="text-[#888783]">Reviews</li>
-							<li className="text-[#888783]">Blogs</li>
-							<li className="text-[#888783]">Return Policy</li>
+							<li className="text-[#888783] hover:underline hover:duration-100">
+								FAQ
+							</li>
+							<li className="text-[#888783] hover:underline hover:duration-100">
+								Reviews
+							</li>
+							<li className="text-[#888783] hover:underline hover:duration-100">
+								Blogs
+							</li>
+							<li className="text-[#888783] hover:underline hover:duration-100">
+								Return Policy
+							</li>
 						</ul>
 
 						<ul>
 							<li className="font-semibold md:text-lg">Utilities</li>
-							<li className="text-[#888783]">Style Guide</li>
-							<li className="text-[#888783]">Error 404</li>
-							<li className="text-[#888783]">Lincensing</li>
-							<li className="text-[#888783]">Changelog</li>
+							<li className="text-[#888783] hover:underline hover:duration-100">
+								Style Guide
+							</li>
+							<li className="text-[#888783] hover:underline hover:duration-100">
+								Error 404
+							</li>
+							<li className="text-[#888783] hover:underline hover:duration-100">
+								Lincensing
+							</li>
+							<li className="text-[#888783] hover:underline hover:duration-100">
+								Changelog
+							</li>
 						</ul>
 					</div>
 
-					<form className="w-full flex flex-col items-center gap-3">
+					<form
+						onSubmit={sendEmail}
+						className="w-full flex flex-col items-center gap-3"
+					>
 						<h1 className="font-semibold text-lg">Subscribe</h1>
 
 						<input
 							type="text"
+							name="name"
+							value={formData.name}
+							onChange={handleInputChange}
 							placeholder="Enter your name"
 							className="bg-transparent p-2 w-full border border-[#967f5048] rounded-full"
 						/>
 						<input
 							type="email"
+							name="email"
+							value={formData.email}
+							onChange={handleInputChange}
 							placeholder="Enter email"
 							className="bg-transparent p-2 w-full border border-[#967f5048] rounded-full"
 						/>
-						<button className="bg-[#967f50] w-full text-white py-2 px-16 rounded-full font-semibold">
+						<button
+							type="submit"
+							className="bg-[#967f50] w-full text-white py-2 px-16 rounded-full font-semibold"
+						>
 							Submit
 						</button>
 					</form>

@@ -17,6 +17,8 @@ function App() {
 			once: true, // Whether animation should happen only once - while scrolling down
 		});
 	}, []);
+
+	
 	return (
 		<>
 			<BrowserRouter>
