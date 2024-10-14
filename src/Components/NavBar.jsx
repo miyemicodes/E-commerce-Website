@@ -45,9 +45,13 @@ export default function NavBar() {
 								<a href="">About Us</a>
 							</Link>
 						</li>
-						<li className=" flex flex-row items-center justify-center transition ease-in-out delay-150 hover:underline hover:duration-100">
-							<a href="">Page</a>
-							<FaCaretDown />
+						<li className=" flex flex-row items-center justify-center transition ease-in-out delay-150">
+							<select>
+								<option value="1">Page</option>
+								<option value="2">FAQ</option>
+								<option value="3">Reviews</option>
+								<option value="4">Contact</option>
+							</select>
 						</li>
 					</ul>
 				</div>

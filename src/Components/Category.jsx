@@ -1,6 +1,5 @@
 import React from "react";
 import Search from "./Search";
-
 import categoryImage from "../assets/categoryImage.jpg";
 import { FaCircleArrowLeft, FaCircleArrowRight } from "react-icons/fa6";
 import ProductCard from "./CARD/ProductCard";
