@@ -4,7 +4,7 @@
 
 .cover {
   background-image: url("../src/assets/Homepage-2copy2.jpg");
-  height: 250px;
+  height: 180px;
   background-position: center;
   object-fit: cover;
 }
@@ -16,7 +16,8 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .remove-scrollbar {
-  -ms-overflow-style: none !important; /* IE and Edge */
-  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important;
+  /* IE and Edge */
+  scrollbar-width: none !important;
+  /* Firefox */
 }
-
