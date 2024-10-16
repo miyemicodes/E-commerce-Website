@@ -22,7 +22,7 @@ export default function Cover() {
 		<>
 			<section className="cover flex items-center justify-center">
 				<h2 className="flex items-center justify-center text-4xl text-black font-semibold font-serif">
-					{getPageName()}
+					Home/{getPageName()}
 				</h2>
 			</section>
 		</>

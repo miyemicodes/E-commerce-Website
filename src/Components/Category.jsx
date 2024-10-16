@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Search from "./Search";
 import categoryImage from "../assets/categoryImage.jpg";
 import { FaCircleArrowLeft, FaCircleArrowRight } from "react-icons/fa6";
 import ProductCard from "./CARD/ProductCard";
 
-export default function ProductCategory() {
+export default function ProductCategory({ products }) {
+	const [currentPage, setCurrentPage] = useState(1);
+	const productsPerPage = 12;
+
+	const totalPages = Math.ceil(products.length / productsPerPage);
+	const indexOfLastProduct = currentPage * productsPerPage;
+	const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+	const currentProducts = products.slice(
+		indexOfFirstProduct,
+		indexOfLastProduct
+	);
+
+	const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
 	return (
 		<>
 			<section className="py-10 px-2 flex flex-row items-start justify-start gap-3 bg-transparent w-full">
@@ -71,7 +84,7 @@ export default function ProductCategory() {
 						</div>
 					</div>
 
-					<div className="w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-3 items-center justify-center">
+					{/* <div className="w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-3 items-center justify-center">
 						<ProductCard />
 						<ProductCard />
 						<ProductCard />
@@ -80,7 +93,17 @@ export default function ProductCategory() {
 						<ProductCard />
 						<ProductCard />
 						<ProductCard />
-					</div>
+						<ProductCard />
+						<ProductCard />
+						<ProductCard />
+						<ProductCard />
+					</div> */}
+
+					<ul className="w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-3 items-center justify-center">
+						{currentProducts.map((product) => (
+							<li key={product.id}> {<ProductCard />} </li>
+						))}
+					</ul>
 				</div>
 			</section>
 		</>
