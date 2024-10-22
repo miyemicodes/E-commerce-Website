@@ -25,7 +25,7 @@ export default function Related() {
 
 				<div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] items-center justify-center gap-2 w-full">
 					<div className="flex flex-col items-start justify-start gap-2">
-						<div className="h-[300px] w-[250px] ">
+						<div className="h-[300px] w-[250px]">
 							<img
 								src={instaImage1}
 								className="rounded-md h-[300px] w-[250px] object-cover"

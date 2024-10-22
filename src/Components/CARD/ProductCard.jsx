@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import myProducts from "../Products";
 import instaImage2 from "../../assets/instapage-image-neckpiece.jpg";
 import { FaStarHalf } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";

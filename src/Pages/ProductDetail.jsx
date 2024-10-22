@@ -14,9 +14,6 @@ export default function ProductDetails() {
 
 	const filterProducts = myProducts.filter((product) => product.id === id);
 	const product = filterProducts[0];
-	console.log(id);
-	console.log(product);
-	console.log(filterProducts);
 
 	return (
 		<>
@@ -25,7 +22,7 @@ export default function ProductDetails() {
 
 				{product ? (
 					<>
-						<div className="lg:h-[600px] py-10 px-6 grid grid-cols-1 items-center justify-center gap-2 md:grid-cols-2  md:px-18">
+						<div className="lg:h-[600px] py-4 px-6 grid grid-cols-1 items-center justify-center gap-2 md:grid-cols-2  md:px-18">
 							<div className="grid grid-cols-4 grid-rows-3 gap-2 h-300px lg:h-[500px]">
 								<img
 									src={productImage}
@@ -83,7 +80,7 @@ export default function ProductDetails() {
 							</div>
 						</div>
 
-						<div className="py-6 px-8 text-left">
+						<div className="py-2 px-8 text-left">
 							<div className="flex items-start justify-start gap-3 py-6">
 								<button className="border font-semibold px-2 py-1 rounded-md hover:text-white hover:bg-[#967f50]">
 									Description
