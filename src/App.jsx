@@ -18,7 +18,6 @@ function App() {
 		});
 	}, []);
 
-	
 	return (
 		<>
 			<BrowserRouter>
@@ -30,7 +29,7 @@ function App() {
 						element={<Home />}
 					/>
 					<Route
-						path="/productdetail"
+						path="/productdetail/:id"
 						element={<ProductDetails />}
 					/>
 					<Route

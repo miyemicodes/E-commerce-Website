@@ -7,7 +7,7 @@ import ProductCard from "./CARD/ProductCard";
 
 export default function ProductCategory() {
 	// const [currentPage, setCurrentPage] = useState(1);
-	// const productsPerPage = 12;
+	// const productsPerPage = 8;
 
 	// const totalPages = Math.ceil(products.length / productsPerPage);
 	// const indexOfLastProduct = currentPage * productsPerPage;
@@ -137,13 +137,6 @@ export default function ProductCategory() {
 							/>
 						))}
 					</ul>
-
-					{/* 
-					<ul className="w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-3 items-center justify-center">
-						{currentProducts.map((product) => (
-							<li key={product.id}> {products} </li>
-						))}
-					</ul> */}
 				</div>
 			</section>
 		</>
