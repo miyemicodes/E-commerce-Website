@@ -4,20 +4,21 @@ import categoryImage from "../assets/categoryImage.jpg";
 import { FaCircleArrowLeft, FaCircleArrowRight } from "react-icons/fa6";
 import myProducts from "./Products";
 import ProductCard from "./CARD/ProductCard";
+import Pagination from "./Pagination";
 
 export default function ProductCategory() {
-	// const [currentPage, setCurrentPage] = useState(1);
-	// const productsPerPage = 8;
+	const [currentPage, setCurrentPage] = useState(1);
+	const productsPerPage = 4;
 
-	// const totalPages = Math.ceil(products.length / productsPerPage);
-	// const indexOfLastProduct = currentPage * productsPerPage;
-	// const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-	// const currentProducts = products.slice(
-	// 	indexOfFirstProduct,
-	// 	indexOfLastProduct
-	// );
+	const totalPages = Math.ceil(myProducts.length / productsPerPage);
+	const indexOfLastProduct = currentPage * productsPerPage;
+	const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+	const currentProducts = myProducts.slice(
+		indexOfFirstProduct,
+		indexOfLastProduct
+	);
 
-	// const paginate = (pageNumber) => setCurrentPage(pageNumber);
+	const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
 	return (
 		<>
@@ -117,26 +118,22 @@ export default function ProductCategory() {
 				<div className="flex flex-col justify-center gap-6 w-full lg:w-[80%] py-4">
 					<div className="flex items-center justify-between px-8">
 						<Search />
-
-						<div className="flex gap-2">
-							<button>
-								<FaCircleArrowLeft className="text-white bg-black rounded-full text-xl" />
-							</button>
-
-							<button>
-								<FaCircleArrowRight className="text-white bg-black rounded-full text-xl" />
-							</button>
-						</div>
 					</div>
 
 					<ul className="w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-3 items-center justify-center">
-						{myProducts.map((product) => (
+						{currentProducts.map((product) => (
 							<ProductCard
 								key={product.id}
 								{...product}
 							/>
 						))}
 					</ul>
+					
+					<Pagination
+						totalPages={totalPages}
+						paginate={paginate}
+						currentPage={currentPage}
+					/>
 				</div>
 			</section>
 		</>
