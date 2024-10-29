@@ -25,19 +25,19 @@ export default function ProductDetails() {
 						<div className="lg:h-[600px] py-4 px-6 grid grid-cols-1 items-center justify-center gap-2 md:grid-cols-2  md:px-18">
 							<div className="grid grid-cols-4 grid-rows-3 gap-2 h-300px lg:h-[500px]">
 								<img
-									src={productImage}
+									src={product.image}
 									className="h-full w-full object-cover object-top [grid-area:1/1/4/4]"
 								/>
 								<img
-									src={productImage}
+									src={product.image}
 									className="h-full object-cover object-top"
 								/>
 								<img
-									src={productImage}
+									src={product.image}
 									className="h-full object-cover object-bottom"
 								/>
 								<img
-									src={productImage}
+									src={product.image}
 									className="h-full object-cover object-center"
 								/>
 							</div>

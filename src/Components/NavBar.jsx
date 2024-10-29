@@ -48,7 +48,11 @@ export default function NavBar() {
 						<li className=" flex flex-row items-center justify-center transition ease-in-out delay-150">
 							<select>
 								<option value="1">Page</option>
-								<option value="2">FAQ</option>
+								<option value="2">
+									<Link to="/faqPage">
+										<a href=""> FAQs</a>
+									</Link>
+								</option>
 								<option value="3">Reviews</option>
 								<option value="4">Contact</option>
 							</select>
