@@ -26,7 +26,7 @@ export default function ProductDetails() {
 							<div className="grid grid-cols-4 grid-rows-3 gap-2 h-[300px] lg:h-[500px]">
 								<img
 									src={product.image}
-									className="h-full w-full object-cover object-top [grid-area:1/1/4/4]"
+									className="h-full w-full object-cover object-center [grid-area:1/1/4/4]"
 								/>
 								<img
 									src={product.image}
