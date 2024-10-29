@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import Search from "./Search";
 import categoryImage from "../assets/categoryImage.jpg";
-import { FaCircleArrowLeft, FaCircleArrowRight } from "react-icons/fa6";
 import myProducts from "./Products";
 import ProductCard from "./CARD/ProductCard";
 import Pagination from "./Pagination";
 
 export default function ProductCategory() {
 	const [currentPage, setCurrentPage] = useState(1);
-	const productsPerPage = 4;
+	const productsPerPage = 8;
 
 	const totalPages = Math.ceil(myProducts.length / productsPerPage);
 	const indexOfLastProduct = currentPage * productsPerPage;
@@ -120,7 +119,7 @@ export default function ProductCategory() {
 						<Search />
 					</div>
 
-					<ul className="w-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-3 items-center justify-center">
+					<ul className="w-full h-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-3 items-start justify-center">
 						{currentProducts.map((product) => (
 							<ProductCard
 								key={product.id}
@@ -128,7 +127,7 @@ export default function ProductCategory() {
 							/>
 						))}
 					</ul>
-					
+
 					<Pagination
 						totalPages={totalPages}
 						paginate={paginate}

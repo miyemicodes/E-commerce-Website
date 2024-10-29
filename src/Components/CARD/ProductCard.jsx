@@ -12,7 +12,7 @@ export default function ProductCard(props) {
 				className="block"
 				to={`/productdetail/${props?.id}`}
 			>
-				<div className="flex flex-col items-center justify-start gap-4 border rounded-md w-[auto] lg:w-[auto] px-1">
+				<div className="flex flex-col items-center justify-start gap-4 border rounded-md h-full w-[auto] lg:w-[auto] px-1">
 					<div className="h-[250px]  w-full lg:w-full">
 						<img
 							src={props.image}

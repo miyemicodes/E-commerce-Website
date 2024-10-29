@@ -45,7 +45,7 @@ export default function Pagination({ totalPages, paginate, currentPage }) {
 					onClick={() => paginate(currentPage + 1)}
 					disabled={currentPage === totalPages}
 				>
-					<FaCircleArrowRight className="text-xl" />
+					<FaCircleArrowRight className="text-xl " />
 				</button>
 			</div>
 		</>

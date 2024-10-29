@@ -1,30 +1,44 @@
-import React from "react";
-import { FaCircleArrowLeft, FaCircleArrowRight } from "react-icons/fa6";
-import instaImage1 from "../assets/instapage-image-bracelet.jpg";
-import instaImage2 from "../assets/intstapage-image-brooch.jpg";
-import articleImage1 from "../assets/article-image-1.jpg";
-import articleImage3 from "../assets/article-image-3.jpg";
+import React, { useState } from "react";
+import { RelatedCard } from "./CARD/RelatedCard";
+import myProducts from "./Products";
+import Pagination from "./Pagination";
 
 export default function Related() {
+	const [currentPage, setCurrentPage] = useState(1);
+	const productsPerPage = 4;
+
+	const totalPages = Math.ceil(myProducts.length / productsPerPage);
+	const indexOfLastProduct = currentPage * productsPerPage;
+	const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+	const relateProducts = myProducts.slice(
+		indexOfFirstProduct,
+		indexOfLastProduct
+	);
+
+	const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
 	return (
 		<>
 			<section className="py-8 px-12">
 				<div className="flex items-center justify-between pb-10">
 					<h2 className="font-serif text-3xl pb-4"> Related Products</h2>
 
-					<div className="flex gap-2">
-						<button>
-							<FaCircleArrowLeft className="text-white bg-black rounded-full text-xl" />
-						</button>
-
-						<button>
-							<FaCircleArrowRight className="text-white bg-black rounded-full text-xl" />
-						</button>
-					</div>
+					<Pagination
+						totalPages={totalPages}
+						paginate={paginate}
+						currentPage={currentPage}
+					/>
 				</div>
 
-				<div className="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] items-center justify-center gap-2 w-full">
-					<div className="flex flex-col items-start justify-start gap-2">
+				<div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] items-center justify-center gap-2 w-full">
+					{relateProducts.map((product) => (
+						<RelatedCard
+							key={product.id}
+							{...product}
+						/>
+					))}
+
+					{/* <div className="flex flex-col items-start justify-start gap-2">
 						<div className="h-[300px] w-[250px]">
 							<img
 								src={instaImage1}
@@ -112,7 +126,7 @@ export default function Related() {
 								</span>
 							</div>
 						</div>
-					</div>
+					</div> */}
 				</div>
 			</section>
 		</>
