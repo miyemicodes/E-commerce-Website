@@ -27,6 +27,7 @@ export default function Related() {
 						totalPages={totalPages}
 						paginate={paginate}
 						currentPage={currentPage}
+						hidNumber={true}
 					/>
 				</div>
 

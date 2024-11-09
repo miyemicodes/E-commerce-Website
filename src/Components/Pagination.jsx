@@ -1,7 +1,6 @@
 import React from "react";
 import { FaCircleArrowLeft, FaCircleArrowRight } from "react-icons/fa6";
-
-export default function Pagination({ totalPages, paginate, currentPage }) {
+export default function Pagination({ totalPages, paginate, currentPage, hidNumber = false }) {
 	const pageNumber = [];
 	for (let i = 1; i <= totalPages; i++) {
 		pageNumber.push(i);
@@ -22,19 +21,20 @@ export default function Pagination({ totalPages, paginate, currentPage }) {
 					<FaCircleArrowLeft className="text-xl" />
 				</button>
 
-				{pageNumber.map((number) => (
-					<button
-						key={number}
-						onClick={() => paginate(number)}
-						className={`hidden md:block px-3 py-1 rounded-lg ${
-							currentPage === number
-								? "bg-blue-600 text-white"
-								: "text-gray-700 hover:bg-gray-200"
-						}`}
-					>
-						{number}
-					</button>
-				))}
+				{!hidNumber &&
+					pageNumber.map((number) => (
+						<button
+							key={number}
+							onClick={() => paginate(number)}
+							className={`hidden md:block px-3 py-1 rounded-lg ${
+								currentPage === number
+									? "bg-blue-600 text-white"
+									: "text-gray-700 hover:bg-gray-200"
+							}`}
+						>
+							{number}
+						</button>
+					))}
 
 				<button
 					className={`p-2 rounded-full ${

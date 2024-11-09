@@ -69,7 +69,9 @@ export default function NavBar() {
 				</div>
 
 				<div className="flex flex-row items-center justify-center gap-5">
-					<Search />
+					<div className="hidden">
+						<Search />
+					</div>
 
 					<div className="text-xl text-[#967f50] flex flex-row items-center justify-center gap-5">
 						{/* /productdetail for texting and designing of the product details page ,navigating to it */}
