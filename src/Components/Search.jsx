@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import myProducts from "./Products";
 
-export default function Search() {
+export default function Search({onClickSearch}) {
 	const [query, setQuery] = useState("");
 	const [results, setResults] = useState(myProducts);
 
@@ -17,11 +17,16 @@ export default function Search() {
 			product.name.toLowerCase().includes(setQuery)
 		);
 		console.log(query);
+		if (onClickSearch && typeof onClickSearch === 'function') {
+			onClickSearch(query);
+		}
 	}
+
+
 
 	return (
 		<>
-			<div className=" flex flex-row items-center justify-center w-8 py-2 px-1 border rounded-3xl border-[#c0bebe] w-60">
+			<div className=" flex flex-row items-center justify-center py-2 px-1 border rounded-3xl border-[#c0bebe] w-60">
 				<input
 					type="text"
 					placeholder="Search..."
@@ -36,11 +41,11 @@ export default function Search() {
 					<FaSearch className="text-[#a5a5a5]" />
 				</button>
 			</div>
-			{
-				<ul>
-					
-				</ul>
-			}
+			{/* {
+			<ul>
+				
+			</ul>
+		} */}
 		</>
 	);
 }

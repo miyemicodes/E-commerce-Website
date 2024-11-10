@@ -19,6 +19,10 @@ export default function ProductCategory() {
 
 	const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+	const handleSearchClick = (searchResult) => {
+		console.log("handle::::", searchResult);
+	};
+
 	return (
 		<>
 			<section className="py-10 px-2 flex flex-col lg:flex-row items-start justify-start gap-3 bg-transparent w-full">
@@ -116,7 +120,7 @@ export default function ProductCategory() {
 
 				<div className="flex flex-col justify-center gap-6 w-full lg:w-[80%] py-4">
 					<div className="flex items-center justify-between px-8">
-						<Search />
+						<Search onClickSearch={handleSearchClick} />
 					</div>
 
 					<ul className="w-full h-full grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-3 items-start justify-center">
