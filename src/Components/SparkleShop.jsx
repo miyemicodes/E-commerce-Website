@@ -12,7 +12,6 @@ export default function SparkleItem({ images }) {
 
 	const handleNext = () => {
 		setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-		console.log(images);
 	};
 
 	const getVisibleImages = () => {

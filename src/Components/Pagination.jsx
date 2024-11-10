@@ -6,6 +6,8 @@ export default function Pagination({ totalPages, paginate, currentPage, hidNumbe
 		pageNumber.push(i);
 	}
 
+	console.log(totalPages);
+
 	return (
 		<>
 			<div className="flex items-center justify-center ">
