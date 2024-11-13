@@ -4,33 +4,41 @@ import categoryImage from "../assets/categoryImage.jpg";
 import myProducts from "./Products";
 import ProductCard from "./CARD/ProductCard";
 import Pagination from "./Pagination";
+import { categoryGender } from "./CATEGORY/Gender";
 
 export default function ProductCategory() {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [searchValue, setSearchValue] = useState("");
+	const [genderCatValue, setGenderCatValue] = useState('');
 
 	const productsPerPage = 9;
 
-	const searchedProduct = useMemo(() => {
-		if (searchValue) {
-			const lowerSearchTerm = searchValue.toLowerCase();
+ const filterIsAvailable = useMemo(
+		() => Boolean(searchValue) || Boolean(genderCatValue)
+ , [searchValue, genderCatValue]);
+
+	const filteredProducts = useMemo(() => {
+		console.log(genderCatValue);
+		if (filterIsAvailable) {
+			const lowerSearchTerm = searchValue?.toLowerCase() || '';
 			return myProducts.filter((product) => {
 				// Convert properties to lowercase and check if searchTerm is included
 				return (
 					product.name.toLowerCase().includes(lowerSearchTerm) ||
-					product.description.toLowerCase().includes(lowerSearchTerm)
+					product.description.toLowerCase().includes(lowerSearchTerm) ||
+					product?.gender?.toLowerCase() === genderCatValue?.toLowerCase()
 				);
 			});
 		}
 		return [];
-	}, [searchValue]);
+	}, [searchValue, genderCatValue]);
 
 	const totalPages = useMemo(
 		() =>
-			searchValue
-				? Math.ceil(searchedProduct.length / productsPerPage)
+			filterIsAvailable
+				? Math.ceil(filteredProducts.length / productsPerPage)
 				: Math.ceil(myProducts.length / productsPerPage),
-		[searchValue, searchedProduct, productsPerPage]
+		[filterIsAvailable, filteredProducts, productsPerPage]
 	);
 	const indexOfLastProduct = useMemo(
 		() => currentPage * productsPerPage,
@@ -42,16 +50,27 @@ export default function ProductCategory() {
 	);
 
 	const currentProducts = useMemo(() => {
-		if (searchValue) {
-			return searchedProduct.slice(indexOfFirstProduct, indexOfLastProduct);
+		console.log('filteredProducts::', filteredProducts);
+		if (filterIsAvailable) {
+			return filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
 		}
 		return myProducts.slice(indexOfFirstProduct, indexOfLastProduct);
-	}, [searchValue, searchedProduct, indexOfFirstProduct, indexOfLastProduct]);
+	}, [
+		filterIsAvailable,
+		filteredProducts,
+		indexOfFirstProduct,
+		indexOfLastProduct,
+	]);
 
 	const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
 	const handleSearchClick = (searchResult) => {
 		setSearchValue(searchResult);
+	};
+
+	const handleGenderClick = (genderCategoryId) => {
+		console.log(genderCategoryId);
+		setGenderCatValue(genderCategoryId);
 	};
 
 	return (
@@ -64,8 +83,15 @@ export default function ProductCategory() {
 						</h2>
 
 						<ul className="text-sm flex flex-col gap-1">
-							<li className="px-2 py-1 hover:bg-[#f5f5f2]">Men</li>
-							<li className="px-2 py-1 hover:bg-[#f5f5f2]"> Women</li>
+							{categoryGender.map((gender) => (
+								<li
+									className="px-2 py-1 hover:bg-[#f5f5f2] cursor-pointer"
+									key={gender?.id}
+									onClick={() => handleGenderClick(gender?.id)}
+								>
+									{gender?.gender}
+								</li>
+							))}
 						</ul>
 					</div>
 

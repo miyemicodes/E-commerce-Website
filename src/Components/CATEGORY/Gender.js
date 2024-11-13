@@ -1,4 +1,4 @@
-const categoryGender = [
+export const categoryGender = [
   {
     id: 'f',
     gender: 'Female'
@@ -8,3 +8,4 @@ const categoryGender = [
     gender: 'Male'
   }
 ]
+
