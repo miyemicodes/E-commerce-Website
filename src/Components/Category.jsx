@@ -5,35 +5,46 @@ import myProducts from "./Products";
 import ProductCard from "./CARD/ProductCard";
 import Pagination from "./Pagination";
 import { categoryGender } from "./CATEGORY/Gender";
+import { catProducts } from "./CATEGORY/Catproduct";
 
 export default function ProductCategory() {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [searchValue, setSearchValue] = useState("");
-	const [genderCatValue, setGenderCatValue] = useState('');
+	const [genderCatValue, setGenderCatValue] = useState("");
+	const [catProductValue, setCatProductValue] = useState("");
 
 	const productsPerPage = 9;
 
- const filterIsAvailable = useMemo(
-		() => Boolean(searchValue) || Boolean(genderCatValue)
- , [searchValue, genderCatValue]);
+	const filterIsAvailable = useMemo(
+		() =>
+			Boolean(searchValue) ||
+			Boolean(genderCatValue) ||
+			Boolean(catProductValue),
+		[searchValue, genderCatValue, catProductValue]
+	);
 
 	const filteredProducts = useMemo(() => {
 		console.log(genderCatValue);
 		if (filterIsAvailable) {
-			const lowerSearchTerm = searchValue?.toLowerCase() || '';
+			const lowerSearchTerm = searchValue?.toLowerCase() || "";
 			return myProducts.filter((product) => {
 				// Convert properties to lowercase and check if searchTerm is included
 
-				const matchSearch = searchValue ? product.name.toLowerCase().includes(lowerSearchTerm) ||
-					product.description.toLowerCase().includes(lowerSearchTerm) : true;
+				const matchSearch = searchValue
+					? product.name.toLowerCase().includes(lowerSearchTerm) ||
+					  product.description.toLowerCase().includes(lowerSearchTerm)
+					: true;
 				const matchGenderFilter = genderCatValue
 					? product?.gender?.toLowerCase() === genderCatValue?.toLowerCase()
 					: true;
-				return matchSearch && matchGenderFilter;
+				const matchProductFilter = catProductValue
+					? product?.category?.toLowerCase() === catProductValue?.toLowerCase()
+					: true;
+				return matchSearch && matchGenderFilter && matchProductFilter;
 			});
 		}
 		return [];
-	}, [searchValue, genderCatValue]);
+	}, [searchValue, genderCatValue, catProductValue]);
 
 	const totalPages = useMemo(
 		() =>
@@ -52,7 +63,7 @@ export default function ProductCategory() {
 	);
 
 	const currentProducts = useMemo(() => {
-		console.log('filteredProducts::', filteredProducts);
+		console.log("filteredProducts::", filteredProducts);
 		if (filterIsAvailable) {
 			return filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
 		}
@@ -75,6 +86,10 @@ export default function ProductCategory() {
 		setGenderCatValue(genderCategoryId);
 	};
 
+	const handlecatProductClick = (catProductId) => {
+		setCatProductValue(catProductId);
+	};
+
 	return (
 		<>
 			<section className="py-10 px-2 flex flex-col lg:flex-row items-start justify-start gap-3 bg-transparent w-full">
@@ -83,7 +98,6 @@ export default function ProductCategory() {
 						<h2 className="text-xl px-2 py-1 font-serif font-semibold">
 							Category By Gender
 						</h2>
-
 						<ul className="text-sm flex flex-col gap-1">
 							{categoryGender.map((gender) => (
 								<li
@@ -105,10 +119,17 @@ export default function ProductCategory() {
 						</h2>
 
 						<ul className="text-sm flex flex-col gap-1">
-							<li className="px-2 py-1 hover:bg-[#f5f5f2]">Necklaces</li>
-							<li className="px-2 py-1 hover:bg-[#f5f5f2]">Earrings </li>
-							<li className="px-2 py-1 hover:bg-[#f5f5f2]">Bracelets </li>
-							<li className="px-2 py-1 hover:bg-[#f5f5f2]">Rings </li>
+							{catProducts.map((product) => (
+								<li
+									className={`px-2 py-1 cursor-pointer ${
+										catProductValue === product?.id ? "bg-red-300" : ""
+									}`}
+									key={product?.id}
+									onClick={() => handlecatProductClick(product?.id)}
+								>
+									{product?.product}
+								</li>
+							))}
 						</ul>
 					</div>
 
