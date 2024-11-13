@@ -21,12 +21,12 @@ export default function ProductCategory() {
 		() =>
 			Boolean(searchValue) ||
 			Boolean(genderCatValue) ||
-			Boolean(catProductValue),
-		[searchValue, genderCatValue, catProductValue]
+			Boolean(catProductValue) ||
+			Boolean(brandCatValue),
+		[searchValue, genderCatValue, catProductValue, brandCatValue]
 	);
 
 	const filteredProducts = useMemo(() => {
-		console.log(genderCatValue);
 		if (filterIsAvailable) {
 			const lowerSearchTerm = searchValue?.toLowerCase() || "";
 			return myProducts.filter((product) => {
@@ -42,11 +42,19 @@ export default function ProductCategory() {
 				const matchProductFilter = catProductValue
 					? product?.category?.toLowerCase() === catProductValue?.toLowerCase()
 					: true;
-				return matchSearch && matchGenderFilter && matchProductFilter;
+				const matchBrandFilter = brandCatValue
+					? product?.brand?.toLowerCase() === brandCatValue?.toLowerCase()
+					: true;
+				return (
+					matchSearch &&
+					matchGenderFilter &&
+					matchProductFilter &&
+					matchBrandFilter
+				);
 			});
 		}
 		return [];
-	}, [searchValue, genderCatValue, catProductValue]);
+	}, [searchValue, genderCatValue, catProductValue, brandCatValue]);
 
 	const totalPages = useMemo(
 		() =>
@@ -90,6 +98,10 @@ export default function ProductCategory() {
 
 	const handlecatProductClick = (catProductId) => {
 		setCatProductValue(catProductId);
+	};
+
+	const handleBrandClick = (brandProductId) => {
+		setBrandCatValue(brandProductId);
 	};
 
 	return (
@@ -139,11 +151,19 @@ export default function ProductCategory() {
 						<h2 className="text-xl px-2 py-1 font-serif font-semibold">
 							Category By Brand
 						</h2>
+
 						<ul className="text-sm flex flex-col gap-1">
-							<li className="px-2 py-1 hover:bg-[#f5f5f2]">Versace</li>
-							<li className="px-2 py-1 hover:bg-[#f5f5f2]"> Pandora</li>
-							<li className="px-2 py-1 hover:bg-[#f5f5f2]">Tiffany & Co.</li>
-							<li className="px-2 py-1 hover:bg-[#f5f5f2]">Boucheron </li>
+							{categoryBrand.map((brand) => (
+								<li
+									className={`px-2 py-1 cursor-pointer ${
+										brandCatValue === brand?.id ? "bg-red-300" : ""
+									}`}
+									key={brand?.id}
+									onClick={() => handleBrandClick(brand?.id)}
+								>
+									{brand?.brand}
+								</li>
+							))}
 						</ul>
 					</div>
 
