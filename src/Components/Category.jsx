@@ -23,11 +23,13 @@ export default function ProductCategory() {
 			const lowerSearchTerm = searchValue?.toLowerCase() || '';
 			return myProducts.filter((product) => {
 				// Convert properties to lowercase and check if searchTerm is included
-				return (
-					product.name.toLowerCase().includes(lowerSearchTerm) ||
-					product.description.toLowerCase().includes(lowerSearchTerm) ||
-					product?.gender?.toLowerCase() === genderCatValue?.toLowerCase()
-				);
+
+				const matchSearch = searchValue ? product.name.toLowerCase().includes(lowerSearchTerm) ||
+					product.description.toLowerCase().includes(lowerSearchTerm) : true;
+				const matchGenderFilter = genderCatValue
+					? product?.gender?.toLowerCase() === genderCatValue?.toLowerCase()
+					: true;
+				return matchSearch && matchGenderFilter;
 			});
 		}
 		return [];
@@ -85,7 +87,9 @@ export default function ProductCategory() {
 						<ul className="text-sm flex flex-col gap-1">
 							{categoryGender.map((gender) => (
 								<li
-									className="px-2 py-1 hover:bg-[#f5f5f2] cursor-pointer"
+									className={`px-2 py-1 cursor-pointer ${
+										genderCatValue === gender?.id ? "bg-red-300" : ""
+									}`}
 									key={gender?.id}
 									onClick={() => handleGenderClick(gender?.id)}
 								>
