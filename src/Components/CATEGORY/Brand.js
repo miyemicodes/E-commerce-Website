@@ -1,11 +1,19 @@
-export const categoryGender = [
+export const categoryBrand = [
   {
-    id: '',
-    gender: ''
+    id: 'Versace',
+    brand: 'Versace'
   },
   {
-    id: '',
-    gender: ''
+    id: 'Pandora',
+    brand: 'Pandora'
+  },
+  {
+    id: 'Tiffany & Co.',
+    brand: 'Tiffany & Co.'
+  },
+  {
+    id: 'Boucheron',
+    brand: 'Boucheron'
   }
 ]
 

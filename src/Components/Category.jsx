@@ -6,12 +6,14 @@ import ProductCard from "./CARD/ProductCard";
 import Pagination from "./Pagination";
 import { categoryGender } from "./CATEGORY/Gender";
 import { catProducts } from "./CATEGORY/Catproduct";
+import { categoryBrand } from "./CATEGORY/Brand";
 
 export default function ProductCategory() {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [searchValue, setSearchValue] = useState("");
 	const [genderCatValue, setGenderCatValue] = useState("");
 	const [catProductValue, setCatProductValue] = useState("");
+	const [brandCatValue, setBrandCatValue] = useState("");
 
 	const productsPerPage = 9;
 
