@@ -45,8 +45,29 @@ export default function NavBar() {
 								<a href="">About Us</a>
 							</Link>
 						</li>
-						<li className=" flex flex-row items-center justify-center transition ease-in-out delay-150">
-							<select>
+						<li className="relative inline-block group">
+							<button className="bg-transparent">Services</button>
+							<div className="hidden flex-col bg-slate-100 absolute min-w-[160px] shadow z-10 group-hover:flex">
+								<Link
+									to="/faqPage"
+									className="block py-2 px-1"
+								>
+									FAQs
+								</Link>
+								<Link
+									to="/"
+									className="block py-2 px-1"
+								>
+									Reviews
+								</Link>
+								<Link
+									to="/"
+									className="block py-2 px-1"
+								>
+									Contact Us
+								</Link>
+							</div>
+							{/* 	<select>
 								<option value="1">Page</option>
 								<option value="2">
 									<Link to="/faqPage">
@@ -55,7 +76,7 @@ export default function NavBar() {
 								</option>
 								<option value="3">Reviews</option>
 								<option value="4">Contact</option>
-							</select>
+							</select> */}
 						</li>
 					</ul>
 				</div>
