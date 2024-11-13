@@ -1,13 +1,18 @@
 import React from "react";
 import { FaCircleArrowLeft, FaCircleArrowRight } from "react-icons/fa6";
-export default function Pagination({ totalPages, paginate, currentPage, hidNumber = false }) {
+export default function Pagination({
+	totalPages,
+	paginate,
+	currentPage,
+	hidNumber = false,
+}) {
 	const pageNumber = [];
 	for (let i = 1; i <= totalPages; i++) {
 		pageNumber.push(i);
 	}
 
-	console.log(totalPages);
-
+	/* 	console.log(totalPages);
+	 */
 	return (
 		<>
 			<div className="flex items-center justify-center ">

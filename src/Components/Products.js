@@ -11,6 +11,8 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Assesories",
     rating: "4.0",
+    gender: 'm',
+
   },
   {
     id: "2",
@@ -24,6 +26,8 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Assesories",
     rating: "4.5",
+    gender: 'm',
+
   },
   {
     id: "3",
@@ -37,6 +41,8 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Assesories",
     rating: "3.5",
+    gender: 'f',
+
   },
   {
     id: "4",
@@ -50,6 +56,8 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Assesories",
     rating: "4.0",
+    gender: 'm',
+
   },
   {
     id: "5",
@@ -63,6 +71,8 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Jewellries",
     rating: "4.0",
+    gender: 'm',
+
   },
   {
     id: "6",
@@ -76,6 +86,8 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Assesories",
     rating: "4.0",
+    gender: 'm',
+
   },
   {
     id: "7",
@@ -89,6 +101,7 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Assesories",
     rating: "4.0",
+    gender: 'f',
   },
   {
     id: "8",
@@ -102,6 +115,7 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Assesories",
     rating: "4.0",
+    gender: 'f',
   },
   {
     id: "9",
@@ -115,6 +129,7 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Assesories",
     rating: "4.0",
+    gender: 'f',
   },
   {
     id: "10",
@@ -128,6 +143,7 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Assesories",
     rating: "4.0",
+    gender: 'f',
   },
   {
     id: "11",
@@ -141,6 +157,7 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Assesories",
     rating: "4.0",
+    gender: 'f',
   },
   {
     id: "12",
@@ -154,6 +171,7 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Assesories",
     rating: "4.0",
+    gender: 'f',
   },
   {
     id: "13",
@@ -167,6 +185,7 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Assesories",
     rating: "4.0",
+    gender: 'f',
   },
   {
     id: "14",
@@ -180,6 +199,7 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Assesories",
     rating: "4.0",
+    gender: 'f',
   },
   {
     id: "15",
@@ -193,6 +213,7 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Assesories",
     rating: "4.0",
+    gender: 'f',
   },
   {
     id: "16",
@@ -206,6 +227,7 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Assesories",
     rating: "4.0",
+    gender: 'f',
   },
   {
     id: "17",
@@ -219,6 +241,7 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Assesories",
     rating: "4.0",
+    gender: 'f',
   },
   {
     id: "18",
@@ -232,6 +255,7 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Assesories",
     rating: "4.0",
+    gender: 'f',
   },
   {
     id: "19",
@@ -245,6 +269,7 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Assesories",
     rating: "4.0",
+    gender: 'm',
   },
   {
     id: "20",
@@ -258,6 +283,8 @@ const myProducts = [
     varieties: "none yet",
     tags: "Bracelet, Assesories",
     rating: "4.0",
+    gender: 'f',
+    brand: '',
   },
 ];
 
