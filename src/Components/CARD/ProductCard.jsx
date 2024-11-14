@@ -4,6 +4,10 @@ import { FaStarHalf } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 
 export default function ProductCard(props) {
+	const intPrice = new Intl.NumberFormat("en-EN", {
+		style: "currency",
+		currency: "USD",
+	}).format(props?.price);
 
 	return (
 		<>
@@ -30,7 +34,7 @@ export default function ProductCard(props) {
 						</div>
 
 						<div className="flex items-center justify-between gap-2">
-							<p className="font-semibold text-lg"> {props.price}</p>
+							<p className="font-semibold text-lg"> {intPrice}</p>
 							<FaCartShopping className="bg-transparent text-black text-lg " />
 						</div>
 					</div>

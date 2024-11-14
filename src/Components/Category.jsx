@@ -7,6 +7,7 @@ import Pagination from "./Pagination";
 import { categoryGender } from "./CATEGORY/Gender";
 import { catProducts } from "./CATEGORY/Catproduct";
 import { categoryBrand } from "./CATEGORY/Brand";
+import { categoryPrice } from "./CATEGORY/Price";
 
 export default function ProductCategory() {
 	const [currentPage, setCurrentPage] = useState(1);
@@ -171,10 +172,16 @@ export default function ProductCategory() {
 						<h2 className="text-xl px-2 py-1 font-serif font-semibold">
 							Price
 						</h2>
+
 						<div className="flex items-center justify-between">
-							<span className="bg-[#f5f5f2] px-3 py-1">$100</span>
-							<span className="bg-[#f5f5f2] px-3 py-1">$500</span>
-							<span className="bg-[#f5f5f2] px-3 py-1">$700+</span>
+							{categoryPrice.map((price) => (
+								<span
+									className="bg-[#f5f5f2] px-3 py-1"
+									key={price?.id}
+								>
+									{price?.price}
+								</span>
+							))}
 						</div>
 					</div>
 
