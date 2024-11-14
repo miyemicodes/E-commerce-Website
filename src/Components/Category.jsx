@@ -15,6 +15,7 @@ export default function ProductCategory() {
 	const [genderCatValue, setGenderCatValue] = useState("");
 	const [catProductValue, setCatProductValue] = useState("");
 	const [brandCatValue, setBrandCatValue] = useState("");
+	const [selectedFiltPrice, setSelectedFiltPrice] = useState(null);
 
 	const productsPerPage = 9;
 
@@ -23,8 +24,15 @@ export default function ProductCategory() {
 			Boolean(searchValue) ||
 			Boolean(genderCatValue) ||
 			Boolean(catProductValue) ||
-			Boolean(brandCatValue),
-		[searchValue, genderCatValue, catProductValue, brandCatValue]
+			Boolean(brandCatValue) ||
+			Boolean(selectedFiltPrice),
+		[
+			searchValue,
+			genderCatValue,
+			catProductValue,
+			brandCatValue,
+			selectedFiltPrice,
+		]
 	);
 
 	const filteredProducts = useMemo(() => {
@@ -46,16 +54,32 @@ export default function ProductCategory() {
 				const matchBrandFilter = brandCatValue
 					? product?.brand?.toLowerCase() === brandCatValue?.toLowerCase()
 					: true;
+				const matchminPricePriceFilter =
+					selectedFiltPrice?.minPrice === null ||
+					product?.price >= selectedFiltPrice?.minPrice;
+
+				const matchmaxPricePriceFilter =
+					selectedFiltPrice?.maxPrice === null ||
+					product?.price <= selectedFiltPrice?.maxPrice;
+
 				return (
 					matchSearch &&
 					matchGenderFilter &&
 					matchProductFilter &&
-					matchBrandFilter
+					matchBrandFilter &&
+					matchminPricePriceFilter &&
+					matchmaxPricePriceFilter
 				);
 			});
 		}
 		return [];
-	}, [searchValue, genderCatValue, catProductValue, brandCatValue]);
+	}, [
+		searchValue,
+		genderCatValue,
+		catProductValue,
+		brandCatValue,
+		selectedFiltPrice,
+	]);
 
 	const totalPages = useMemo(
 		() =>
@@ -103,6 +127,11 @@ export default function ProductCategory() {
 
 	const handleBrandClick = (brandProductId) => {
 		setBrandCatValue(brandProductId);
+	};
+
+	const handlePricefilter = (priceData) => {
+		console.log(priceData);
+		setSelectedFiltPrice(priceData);
 	};
 
 	return (
@@ -173,16 +202,19 @@ export default function ProductCategory() {
 							Price
 						</h2>
 
-						<div className="flex items-center justify-between">
-							{categoryPrice.map((price) => (
-								<span
-									className="bg-[#f5f5f2] px-3 py-1"
-									key={price?.id}
+						<ul className="text-sm flex flex-col gap-1">
+							{categoryPrice.map((p) => (
+								<li
+									className={`px-2 py-1 cursor-pointer ${
+										false ? "bg-red-300" : ""
+									}`}
+									key={p?.id}
+									onClick={() => handlePricefilter(p)}
 								>
-									{price?.price}
-								</span>
+									{p?.priceText}
+								</li>
 							))}
-						</div>
+						</ul>
 					</div>
 
 					<div className="py-3 px-1 rounded-lg">

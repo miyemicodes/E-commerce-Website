@@ -2,12 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaStarHalf } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
+import { usdCurrencyFormatter } from "../../helpers/currencyHelper";
 
 export default function ProductCard(props) {
-	const intPrice = new Intl.NumberFormat("en-EN", {
-		style: "currency",
-		currency: "USD",
-	}).format(props?.price);
+	const intPrice = usdCurrencyFormatter(props?.price);
 
 	return (
 		<>
