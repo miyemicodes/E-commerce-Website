@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Search from "./Search";
 import { Link } from "react-router-dom";
-import { FaBars, FaCaretDown, FaCross } from "react-icons/fa";
+import { FaBars, FaCross } from "react-icons/fa";
 import { FaCartShopping, FaUser } from "react-icons/fa6";
 
 export default function NavBar() {
@@ -31,19 +31,13 @@ export default function NavBar() {
 				<div className="hidden md:block">
 					<ul className=" text-sm text-[#a5a5a5] font-semibold flex flex-row items-center justify-center gap-12 ">
 						<li className="transition ease-in-out delay-150  hover:underline hover:duration-100">
-							<Link to="/">
-								<a href="">Home</a>
-							</Link>
+							<Link to="/">Home</Link>
 						</li>
 						<li className="transition ease-in-out delay-150 hover:underline hover:duration-100">
-							<Link to="/shop">
-								<a href="">Shop</a>
-							</Link>
+							<Link to="/shop">Shop</Link>
 						</li>
 						<li className="transition ease-in-out delay-150 hover:underline hover:duration-100">
-							<Link to="/about">
-								<a href="">About Us</a>
-							</Link>
+							<Link to="/about">About Us</Link>
 						</li>
 						<li className="relative inline-block group">
 							<button className="bg-transparent">Services</button>

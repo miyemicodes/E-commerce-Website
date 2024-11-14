@@ -72,9 +72,7 @@ export default function Footer() {
 						<ul className="flex flex-col gap-1">
 							<li className="font-semibold md:text-lg">Pages</li>
 							<li className="text-[#888783] hover:underline hover:duration-100">
-								<Link to="/about">
-									<a href="">About Us</a>
-								</Link>
+								<Link to="/about">About Us</Link>
 							</li>
 							<li className="text-[#888783] hover:underline hover:duration-100">
 								Categories
