@@ -27,7 +27,7 @@ export default function Footer() {
 		emailjs
 			.send(
 				"service_vn4m2wy", // Replace with your EmailJS service ID
-				"template_nby1zxi", // Replace with your EmailJS template ID
+				"template_9w0ttyp", // Replace with your EmailJS template ID
 				formData, // Data to send (name, email, message)
 				"Jkf1CjDfXnqUxM1twcpKf" // Replace with your EmailJS user ID
 			)
