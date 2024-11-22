@@ -25,65 +25,65 @@ import NewsletterPage from './Pages/UserPages/NewsletterPage.jsx'
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Home /> },
       {
-        path: "shop",
+        path: 'shop',
         element: <Shop />,
       },
       {
-        path: "productdetail/:id",
+        path: 'productdetail/:id',
         element: <ProductDetails />,
       },
       {
-        path: "User",
+        path: 'about',
+        element: <AboutUs />,
+      },
+      {
+        path: 'faqPage',
+        element: <FaqPage />,
+      },
+      {
+        path: 'User',
         element: <User />,
         children: [
           { index: true, element: <AccountOverview /> },
           {
-            path: "orders",
+            path: 'orders',
             element: <OrdersPage />,
           },
           {
-            path: "saved-items",
+            path: 'saved-items',
             element: <SavedItemsPage />,
           },
           {
-            path: "cart",
+            path: 'cart',
             element: <CartPage />,
           },
           {
-            path: "bookmark",
+            path: 'bookmark',
             element: <BookmarkPage />,
           },
           {
-            path: "recently-viewed",
+            path: 'recently-viewed',
             element: <RecentlyViewedPage />,
           },
           {
-            path: "account-managment",
+            path: 'account-managment',
             element: <AccountManagmentPage />,
           },
           {
-            path: "newsletter",
+            path: 'newsletter',
             element: <NewsletterPage />,
           },
           {
-            path: "close-Account",
+            path: 'close-Account',
             element: <CloseAccountPage />,
           },
         ],
-      },
-      {
-        path: "about",
-        element: <AboutUs />,
-      },
-      {
-        path: "faqPage",
-        element: <FaqPage />,
       },
     ],
   },
