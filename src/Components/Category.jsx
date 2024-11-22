@@ -56,21 +56,28 @@ export default function ProductCategory() {
           : true;
         console.log('selectedFiltPrice::::', selectedFiltPrice);
 
-        const matchminPricePriceFilter =
+        /* const matchminPricePriceFilter =
           selectedFiltPrice?.minPrice === null ||
           product?.price >= selectedFiltPrice?.minPrice;
 
         const matchmaxPricePriceFilter =
           selectedFiltPrice?.maxPrice === null ||
-          product?.price <= selectedFiltPrice?.maxPrice;
+          product?.price <= selectedFiltPrice?.maxPrice; */
+
+        const matchPriceFilter =
+          (!selectedFiltPrice?.minPrice ||
+            product.price >= selectedFiltPrice.minPrice) &&
+          (!selectedFiltPrice?.maxPrice ||
+            product.price <= selectedFiltPrice.maxPrice);
 
         return (
           matchSearch &&
           matchGenderFilter &&
           matchProductFilter &&
           matchBrandFilter &&
-          matchminPricePriceFilter &&
-          matchmaxPricePriceFilter
+          matchPriceFilter
+         /*  matchminPricePriceFilter &&
+          matchmaxPricePriceFilter */
         );
       });
     }
@@ -137,13 +144,28 @@ export default function ProductCategory() {
     setSelectedFiltPrice(priceData);
   };
 
+  const clearFilter = () => {
+    setSearchValue('');
+    setBrandCatValue('');
+    setSelectedFiltPrice(null);
+    setCatProductValue('');
+    setCurrentPage(1);
+    setGenderCatValue('');
+  };
+
   return (
     <>
       <section className='py-10 px-2 flex flex-col lg:flex-row items-start justify-start gap-3 bg-transparent w-full'>
         <div className='hidden lg:flex flex-col py-20 gap-5 w-[20%]'>
-          <button className='p-2 rounded-lg hover:bg-red-100 w-[200px] border border-red-600 text-red-600 text-md text-center'>
-            clear
-          </button>
+          {filterIsAvailable ? (
+            <button
+              className='p-2 rounded-lg hover:bg-red-100 w-[200px] border border-red-600 text-red-600 text-md text-center'
+              onClick={() => clearFilter()}
+            >
+              clear
+            </button>
+          ) : null}
+
           <div className='flex-col items-start justify-start border p-1 rounded-lg'>
             <h2 className='text-xl px-2 py-1 font-serif font-semibold'>
               Category By Gender
