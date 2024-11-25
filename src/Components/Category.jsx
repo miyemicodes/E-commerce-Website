@@ -254,13 +254,17 @@ export default function ProductCategory() {
 				</div>
 
 				<div className="lg:hidden w-full flex flex-col gap-4">
-					<div className="relative inline-block flex-col items-start justify-start border p-1 rounded-lg group transition ease-in-out delay-150 hover:duration-100 w-full ">
+					<div className="flex-col items-start justify-start border p-1 rounded-lg">
 						<h2 className="text-xl px-2 py-1 font-serif font-semibold">
 							Category By Gender
 						</h2>
-						<ul className="hidden absolute text-sm flex-col gap-1 min-w-[120px] shadow z-10 group-hover:flex">
+						<select
+							className="text-sm flex-col gap-1"
+							onChange={(e) => handlecatProductClick(e.target.value)}
+							value={genderCatValue}
+						>
 							{categoryGender.map((gender) => (
-								<li
+								<option
 									className={`px-2 py-1 cursor-pointer ${
 										genderCatValue === gender?.id ? "bg-red-300" : ""
 									}`}
@@ -268,9 +272,9 @@ export default function ProductCategory() {
 									onClick={() => handleGenderClick(gender?.id)}
 								>
 									{gender?.gender}
-								</li>
+								</option>
 							))}
-						</ul>
+						</select>
 					</div>
 
 					<div className="flex-col items-start justify-start border p-1 rounded-lg">
@@ -279,7 +283,7 @@ export default function ProductCategory() {
 						</h2>
 
 						<select
-							className="hidden text-sm  flex-col gap-1"
+							className="text-sm flex-col gap-1"
 							onChange={(e) => handlecatProductClick(e.target.value)}
 							value={catProductValue}
 						>
@@ -317,12 +321,24 @@ export default function ProductCategory() {
 						<h2 className="text-xl px-2 py-1 font-serif font-semibold">
 							Price
 						</h2>
-						{/* <Slider/> */}
-						<div className="flex items-center justify-between">
-							<span className="bg-[#f5f5f2] px-3 py-1">$100</span>
-							<span className="bg-[#f5f5f2] px-3 py-1">$700</span>
-							<span className="bg-[#f5f5f2] px-3 py-1">Filter</span>
-						</div>
+
+						<select
+							className="text-sm flex flex-col gap-1"
+							onChange={(e) => handlecatProductClick(e.target.value)}
+							value={selectedFiltPrice}
+						>
+							{categoryPrice.map((p) => (
+								<option
+									className={`px-2 py-1 cursor-pointer ${
+										selectedFiltPrice?.id === p.id ? "bg-red-300" : ""
+									}`}
+									key={p?.id}
+									onClick={() => handlePricefilter(p)}
+								>
+									{p?.priceText}
+								</option>
+							))}
+						</select>
 					</div>
 				</div>
 
