@@ -162,7 +162,7 @@ export default function ProductCategory() {
 							className="p-2 rounded-lg hover:bg-red-100 w-[200px] border border-red-600 text-red-600 text-md text-center"
 							onClick={() => clearFilter()}
 						>
-							clear
+							Clear
 						</button>
 					) : null}
 
@@ -275,12 +275,16 @@ export default function ProductCategory() {
 
 					<div className="flex-col items-start justify-start border p-1 rounded-lg">
 						<h2 className="text-xl px-2 py-1 font-serif font-semibold">
-							Category By Product
+							Category By Productss
 						</h2>
 
-						<ul className="hidden text-sm  flex-col gap-1">
+						<select
+							className="hidden text-sm  flex-col gap-1"
+							onChange={(e) => handlecatProductClick(e.target.value)}
+							value={catProductValue}
+						>
 							{catProducts.map((product) => (
-								<li
+								<option
 									className={`px-2 py-1 cursor-pointer ${
 										catProductValue === product?.id ? "bg-red-300" : ""
 									}`}
@@ -288,9 +292,9 @@ export default function ProductCategory() {
 									onClick={() => handlecatProductClick(product?.id)}
 								>
 									{product?.product}
-								</li>
+								</option>
 							))}
-						</ul>
+						</select>
 					</div>
 
 					<div className="flex-col items-start justify-start border p-1 rounded-lg">
