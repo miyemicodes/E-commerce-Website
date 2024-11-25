@@ -25,7 +25,7 @@ export default function Search({ onClickSearch }) {
 
 	return (
 		<>
-			<div className="w-min flex flex-col items-start gap-2">
+			<div className="w-full flex flex-row items-center justify-center gap-2">
 				<div className="flex relative flex-row items-center justify-center py-2 px-1 border rounded-3xl border-[#c0bebe] w-full md:w-4/12 md:min-w-[500px]">
 					<input
 						type="text"
@@ -44,10 +44,9 @@ export default function Search({ onClickSearch }) {
 				{query ? (
 					<button
 						onClick={clearQuery}
-						className="bg-red-500 flex gap-1 items-center p-2 rounded-lg hover:bg-red-900"
+						className="bg-white flex items-center p-2 rounded-2xl border-2 border-red-500 hover:bg-red-500"
 					>
-						<RiCloseLine className="text-white h-4 w-4" />
-						<p className="text-white text-md">clear</p>
+						<RiCloseLine className="text-red-500 text-2xl font-semibold hover:text-white" />
 					</button>
 				) : null}
 			</div>
