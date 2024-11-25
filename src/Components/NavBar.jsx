@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Search from "./Search";
 import { Link } from "react-router-dom";
-import { FaBars, FaCross } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
+import { ImCross } from "react-icons/im";
 import { FaCartShopping, FaUser } from "react-icons/fa6";
 
 export default function NavBar() {
@@ -22,7 +23,7 @@ export default function NavBar() {
 					className=" flex flex-row items-center justify-center w-8 py-2 px-1 border rounded-2xl border-[#c0bebe] md:hidden relative"
 				>
 					{navOpen ? (
-						<FaCross className="text-[#a5a5a5]" />
+						<ImCross className="text-[#a5a5a5]" />
 					) : (
 						<FaBars className="text-[#a5a5a5] absolute" />
 					)}

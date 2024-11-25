@@ -1,7 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { usdCurrencyFormatter } from "../../helpers/currencyHelper";
 import { FaCircleArrowRight } from "react-icons/fa6";
 
 export function RelatedCard(props) {
+	const intPrice = usdCurrencyFormatter(props?.price);
+
 	return (
 		<>
 			<div className="flex flex-col items-start justify-start gap-2">
@@ -15,11 +19,13 @@ export function RelatedCard(props) {
 				<div className="flex flex-col items-start gap-2 w-[250px] ">
 					<div className="w-full flex items-center justify-between">
 						<p className="font-semibold font-sans">{props.name}</p>
-						<FaCircleArrowRight className="text-white bg-black rounded-full text-xl" />
+						<Link to={`/productdetail/${props?.id}`}>
+							<FaCircleArrowRight className="text-white bg-black rounded-full text-xl" />
+						</Link>
 					</div>
 
 					<div className="flex items-center gap-2">
-						<p className="font-semibold text-lg">{props.price}</p>
+						<p className="font-semibold text-lg">{intPrice}</p>
 						<span className="text-[#8a8b85] text-sm line-through">
 							{props.oldPrice}
 						</span>

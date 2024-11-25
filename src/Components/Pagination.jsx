@@ -19,8 +19,8 @@ export default function Pagination({
 				<button
 					className={`p-2 rounded-full ${
 						currentPage === 1
-							? "text-gray-400"
-							: "text-blue-600 hover:bg-gray-200"
+							? "text-gray-300"
+							: "text-[#d1ab6c] hover:bg-gray-200"
 					}`}
 					onClick={() => paginate(currentPage - 1)}
 					disabled={currentPage === 1}
@@ -35,7 +35,7 @@ export default function Pagination({
 							onClick={() => paginate(number)}
 							className={`hidden md:block px-3 py-1 rounded-lg ${
 								currentPage === number
-									? "bg-blue-600 text-white"
+									? "bg-[#d1ab6c] text-white"
 									: "text-gray-700 hover:bg-gray-200"
 							}`}
 						>
@@ -47,7 +47,7 @@ export default function Pagination({
 					className={`p-2 rounded-full ${
 						currentPage === totalPages
 							? "text-gray-400"
-							: "text-blue-600 hover:bg-gray-200"
+							: "text-[#d1ab6c] hover:bg-gray-200"
 					}`}
 					onClick={() => paginate(currentPage + 1)}
 					disabled={currentPage === totalPages}
