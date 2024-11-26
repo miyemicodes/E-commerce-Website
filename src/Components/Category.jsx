@@ -128,6 +128,7 @@ export default function ProductCategory() {
 
 	const handleGenderClick = (genderCategoryId) => {
 		console.log(genderCategoryId);
+		console.log(categoryGender);
 		setGenderCatValue(genderCategoryId);
 	};
 
@@ -258,6 +259,7 @@ export default function ProductCategory() {
 						<h2 className="text-xl px-2 py-1 font-serif font-semibold">
 							Category By Gender
 						</h2>
+
 						<select
 							className="text-sm flex-col gap-1"
 							onChange={(e) => handlecatProductClick(e.target.value)}
@@ -269,7 +271,7 @@ export default function ProductCategory() {
 										genderCatValue === gender?.id ? "bg-red-300" : ""
 									}`}
 									key={gender?.id}
-									onClick={() => handleGenderClick(gender?.id)}
+									value={gender?.id}
 								>
 									{gender?.gender}
 								</option>
@@ -293,6 +295,7 @@ export default function ProductCategory() {
 										catProductValue === product?.id ? "bg-red-300" : ""
 									}`}
 									key={product?.id}
+									value={product?.id}
 									onClick={() => handlecatProductClick(product?.id)}
 								>
 									{product?.product}
@@ -334,6 +337,7 @@ export default function ProductCategory() {
 									}`}
 									key={p?.id}
 									onClick={() => handlePricefilter(p)}
+									value={p.id}
 								>
 									{p?.priceText}
 								</option>
