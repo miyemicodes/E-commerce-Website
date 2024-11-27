@@ -35,6 +35,7 @@ export default function ProductCard(props) {
 					<div className="flex items-center justify-between gap-2">
 						<p className="font-semibold text-lg"> {intPrice}</p>
 						<div className="flex gap-2">
+							
 							<Link to="/User/saved-items">
 								<GiSelfLove className=" text-lg" />
 							</Link>

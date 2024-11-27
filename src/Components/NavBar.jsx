@@ -50,13 +50,13 @@ export default function NavBar() {
 									FAQs
 								</Link>
 								<Link
-									to="/"
+									to="/reviews"
 									className="block py-2 px-1 hover:bg-[#fbf3e2]"
 								>
 									Reviews
 								</Link>
 								<Link
-									to="/"
+									to="/contact-us"
 									className="block py-2 px-1 hover:bg-[#fbf3e2]"
 								>
 									Contact Us

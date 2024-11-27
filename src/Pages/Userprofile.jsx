@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { LuPackage2 } from "react-icons/lu";
 import { RxCaretRight } from "react-icons/rx";
@@ -77,51 +78,58 @@ export default function User() {
 	};
 
 	return (
-    <div className='w-full flex flex-col md:flex-row items-start justify-center gap-2 p-3'>
-      <div
-        className={`w-full md:w-[350px] flex-col ${isSidebarVisible ? 'flex' : 'hidden md:flex'}`}
-      >
-        <h2 className='p-3 font-semibold bg-[#fbf3de]'>MY YesEL ACCOUNT</h2>
-        <ul className=' w-full px-2 flex flex-col gap-1'>
-          {userpageRoutes?.map((aUserRoute) => (
-            <li
-              className='w-full p-2 flex flex-col hover:bg-[#f5f5f2]'
-              key={aUserRoute.id}
-            >
-              <button
-                className='flex items-center justify-between'
-                onClick={() => handleNavigateToChildRoute(aUserRoute)}
-              >
-                <div className='flex items-center gap-3'>
-                  {aUserRoute.icon}
-                  <span>{aUserRoute.name}</span>
-                </div>
-                <RxCaretRight />
-              </button>
-            </li>
-          ))}
-        </ul>
+		<div className="w-full flex flex-col md:flex-row items-start justify-center gap-2 p-3">
+			<div
+				className={`w-full md:w-[350px] flex-col ${
+					isSidebarVisible ? "flex" : "hidden md:flex"
+				}`}
+			>
+				<Link to="/User">
+					<h2 className="p-3 font-semibold bg-[#fbf3de]">MY YesEL ACCOUNT</h2>
+				</Link>
 
-        <button className='p-3 font-semibold text-center text-[#d6af74]'>
-          LOG OUT
-        </button>
-      </div>
+				<ul className=" w-full px-2 flex flex-col gap-1">
+					{userpageRoutes?.map((aUserRoute) => (
+						<li
+							className="w-full p-2 flex flex-col hover:bg-[#f5f5f2]"
+							key={aUserRoute.id}
+						>
+							<button
+								className="flex items-center justify-between"
+								onClick={() => handleNavigateToChildRoute(aUserRoute)}
+							>
+								<div className="flex items-center gap-3">
+									{aUserRoute.icon}
+									<span>{aUserRoute.name}</span>
+								</div>
+								<RxCaretRight />
+							</button>
+						</li>
+					))}
+				</ul>
 
-      {/* other children of user routes are here */}
-      <div
-        className={`w-full md:flex-1 flex-col ${!isSidebarVisible ? 'flex' : 'hidden md:flex'}`}
-      >
-        {/* Back button for mobile screens */}
-        <div className='mb-3 md:hidden'>
-          <button
-            className='p-2 text-sm font-semibold text-[#967f50] bg-[#fbf3de] rounded-md'
-            onClick={handleBackToMenu}
-          >
-            ← Back to Menu
-          </button>
-        </div>
-        <Outlet />
-      </div>
-    </div>
-  );
+				<button className="p-3 font-semibold text-center text-[#d6af74]">
+					LOG OUT
+				</button>
+			</div>
+
+			{/* other children of user routes are here */}
+			<div
+				className={`w-full md:flex-1 flex-col ${
+					!isSidebarVisible ? "flex" : "hidden md:flex"
+				}`}
+			>
+				{/* Back button for mobile screens */}
+				<div className="mb-3 md:hidden">
+					<button
+						className="p-2 text-sm font-semibold text-[#967f50] bg-[#fbf3de] rounded-md"
+						onClick={handleBackToMenu}
+					>
+						← Back to Menu
+					</button>
+				</div>
+				<Outlet />
+			</div>
+		</div>
+	);
 }
