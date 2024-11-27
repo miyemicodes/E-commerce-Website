@@ -3,25 +3,23 @@ import Property from "../Components/Property";
 import Footer from "../Components/Footer";
 import Cover from "../Components/CoverTop";
 import Button from "../Components/ShopNow";
-import productImage from "../assets/productDetail.jpg";
 import Testimonial from "../Components/Testimonial";
 import Related from "../Components/RelatedProduct";
 import { useParams } from "react-router-dom";
 import myProducts from "../Components/Products";
+import { ProductDetailCard } from "../Components/CARD/ProductDetailCard";
 
 export default function ProductDetails() {
-	const { id } = useParams();
 
-	const filterProducts = myProducts.filter((product) => product.id === id);
-	const product = filterProducts[0];
-
+	
 	return (
 		<>
 			<section>
 				<Cover />
 
-				{product ? (
-					<>
+				<ProductDetailCard />
+				<>
+					{/** 
 						<div className="lg:h-[600px] py-4 px-6 grid grid-cols-1 items-center justify-center gap-2 md:grid-cols-2  md:px-18">
 							<div className="grid grid-cols-4 grid-rows-3 gap-2 h-[300px] lg:h-[500px]">
 								<img
@@ -60,7 +58,7 @@ export default function ProductDetails() {
 								<div className="flex flex-col items-start justify-start gap-2">
 									<div className="flex items-center justify-start font-semibold">
 										<span className="text-lg">Price :</span>
-										<span className="font-bold text-xl"> {product.price} </span>
+										<span className="font-bold text-xl"> {intPrice}</span>
 									</div>
 									<div>
 										<span className="font-semibold text-lg">
@@ -97,15 +95,11 @@ export default function ProductDetails() {
 								<p className="text-sm text-[#8a8b85]">{product.description}</p>
 							</div>
 						</div>
-					</>
-				) : (
-					<p>Product not found </p>
-				)}
+						*/}
+				</>
 
 				<Property />
-
 				<Testimonial />
-
 				<Related />
 				<Footer />
 			</section>

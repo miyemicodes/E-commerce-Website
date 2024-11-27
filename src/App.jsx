@@ -13,12 +13,12 @@ function App() {
 	}, []);
 
 	return (
-    <>
-      <NavBar />
-      {/* other children of App routes are here */}
-      <Outlet />
-    </>
-  );
+		<>
+			<NavBar />
+			{/* other children of App routes are here */}
+			<Outlet />
+		</>
+	);
 }
 
 export default App;

@@ -28,7 +28,7 @@ export default function ProductCategory() {
 			Boolean(selectedFiltPrice),
 		[
 			searchValue,
-			genderCatValue,
+			genderCatValue,+
 			catProductValue,
 			brandCatValue,
 			selectedFiltPrice,
@@ -254,6 +254,7 @@ export default function ProductCategory() {
 					</div>
 				</div>
 
+				{/** the one for mobile view havent ediited one of them */}
 				<div className="lg:hidden w-full flex flex-col gap-4">
 					<div className="flex-col items-start justify-start border p-1 rounded-lg">
 						<h2 className="text-xl px-2 py-1 font-serif font-semibold">
@@ -279,6 +280,7 @@ export default function ProductCategory() {
 						</select>
 					</div>
 
+					{/** only one that is working */}
 					<div className="flex-col items-start justify-start border p-1 rounded-lg">
 						<h2 className="text-xl px-2 py-1 font-serif font-semibold">
 							Category By Productss

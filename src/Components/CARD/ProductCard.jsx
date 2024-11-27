@@ -15,7 +15,7 @@ export default function ProductCard(props) {
 				to={`/productdetail/${props?.id}`}
 			>
 				<div className="flex flex-col items-center justify-start gap-4 border rounded-md h-full min-h-[200px] w-[auto] lg:w-[auto] px-1">
-					<div className="h-[250px]  w-full lg:w-full">
+					<div className="h-[250px] w-full lg:w-full">
 						<img
 							src={props.image}
 							className="rounded-md h-[250px] w-full lg:w-full object-cover"
