@@ -112,7 +112,7 @@ export default function User() {
         className={`w-full md:flex-1 flex-col ${!isSidebarVisible ? 'flex' : 'hidden md:flex'}`}
       >
         {/* Back button for mobile screens */}
-        <div className='mb-3'>
+        <div className='mb-3 mD:hidden'>
           <button
             className='p-2 text-sm font-semibold text-[#967f50] bg-[#fbf3de] rounded-md'
             onClick={handleBackToMenu}
