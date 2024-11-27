@@ -1,6 +1,5 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Button from "../BUTTONS/ShopNow";
 import { AddToCartBtn } from "../BUTTONS/AddToCart";
 import myProducts from "../JS/Products";
 import { usdCurrencyFormatter } from "../../helpers/currencyHelper";
@@ -19,7 +18,7 @@ export function ProductDetailCard(props) {
 
 	return (
 		<>
-			<div className="lg:h-[600px] py-4 px-6 grid grid-cols-1 items-center justify-center gap-2 md:grid-cols-2  md:px-18">
+			<div className="lg:h-[600px] py-4 px-6 grid grid-cols-1 items-center justify-center gap-2 md:gap-8 md:grid-cols-2  md:px-18">
 				<div className="grid grid-cols-4 grid-rows-3 gap-2 h-[300px] lg:h-[500px]">
 					<img
 						src={product.image}
@@ -40,8 +39,8 @@ export function ProductDetailCard(props) {
 				</div>
 
 				<div className="flex flex-col items-start justify-start gap-6">
-					<div className="flex flex-col items-start justify-start gap-4">
-						<span className=" text-mono text-2xl font-semibold">
+					<div className="flex flex-col items-start justify-start gap-2">
+						<span className="italic-font text-3xl font-semibold">
 							{product.category}
 						</span>
 						<h2 className="font-serif text-3xl font-semibold">
@@ -52,7 +51,8 @@ export function ProductDetailCard(props) {
 						</p>
 					</div>
 
-					<AddToCartBtn />
+					<AddToCartBtn showText={true} />
+
 					<div className="flex flex-col items-start justify-start gap-2">
 						<div className="flex items-center justify-start font-semibold">
 							<span className="text-lg">Price :</span>

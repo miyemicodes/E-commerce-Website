@@ -3,21 +3,38 @@
 @import "tailwindcss/utilities";
 
 .cover {
-  background-image: url("../src/assets/Homepage-2copy2.jpg");
-  height: 180px;
-  background-position: center;
-  object-fit: cover;
+	background-image: url("../src/assets/Homepage-2copy2.jpg");
+	height: 180px;
+	background-position: center;
+	object-fit: cover;
+}
+
+.italic-font {
+	font-family: "Mea Culpa", cursive;
+	letter-spacing: 0.1rem;
+}
+
+.grand-hotel {
+	font-family: "Grand Hotel", cursive;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.montecarlo {
+	font-family: "MonteCarlo", cursive;
+	font-weight: 500;
+	font-style: normal;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .remove-scrollbar::-webkit-scrollbar {
-  display: none !important;
+	display: none !important;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .remove-scrollbar {
-  -ms-overflow-style: none !important;
-  /* IE and Edge */
-  scrollbar-width: none !important;
-  /* Firefox */
+	-ms-overflow-style: none !important;
+	/* IE and Edge */
+	scrollbar-width: none !important;
+	/* Firefox */
 }
