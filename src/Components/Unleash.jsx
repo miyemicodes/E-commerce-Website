@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./ShopNow";
+import Button from "./BUTTONS/ShopNow";
 import featuredImage1 from "../assets/featured-image-main-1.jpg";
 
 export default function Unleash() {

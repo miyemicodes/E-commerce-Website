@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 import Search from "./Search";
 import categoryImage from "../assets/categoryImage.jpg";
-import myProducts from "./Products";
+import myProducts from "./JS/Products";
 import ProductCard from "./CARD/ProductCard";
 import Pagination from "./Pagination";
 import { categoryGender } from "./CATEGORY/Gender";
@@ -28,8 +28,8 @@ export default function ProductCategory() {
 			Boolean(selectedFiltPrice),
 		[
 			searchValue,
-			genderCatValue,+
-			catProductValue,
+			genderCatValue,
+			+catProductValue,
 			brandCatValue,
 			selectedFiltPrice,
 		]
@@ -330,7 +330,6 @@ export default function ProductCategory() {
 						<select
 							className="text-sm flex flex-col gap-1"
 							onChange={(e) => handlecatProductClick(e.target.value)}
-							value={selectedFiltPrice}
 						>
 							{categoryPrice.map((p) => (
 								<option

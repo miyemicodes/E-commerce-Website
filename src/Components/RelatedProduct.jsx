@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { RelatedCard } from "./CARD/RelatedCard";
-import myProducts from "./Products";
+import myProducts from "./JS/Products";
 import Pagination from "./Pagination";
 
 export default function Related() {

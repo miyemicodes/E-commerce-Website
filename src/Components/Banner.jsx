@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "./ShopNow";
+import Button from "./BUTTONS/ShopNow";
 import homeImage1 from "../assets/Homepage-1.jpg";
 import homeImage2 from "../assets/Homepage-2.jpg";
 import qualityImage from "../assets/bannerBrandPic.png";

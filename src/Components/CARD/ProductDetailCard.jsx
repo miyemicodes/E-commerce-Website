@@ -1,7 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Button from "../ShopNow";
-import myProducts from "../Products";
+import Button from "../BUTTONS/ShopNow";
+import { AddToCartBtn } from "../BUTTONS/AddToCart";
+import myProducts from "../JS/Products";
 import { usdCurrencyFormatter } from "../../helpers/currencyHelper";
 
 export function ProductDetailCard(props) {
@@ -51,8 +52,7 @@ export function ProductDetailCard(props) {
 						</p>
 					</div>
 
-					<Button />
-
+					<AddToCartBtn />
 					<div className="flex flex-col items-start justify-start gap-2">
 						<div className="flex items-center justify-start font-semibold">
 							<span className="text-lg">Price :</span>

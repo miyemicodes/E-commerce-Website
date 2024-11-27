@@ -1,6 +1,6 @@
 import React from "react";
 import featuredImage from "../assets/featured-image-main-2.jpg";
-import Button from "./ShopNow";
+import Button from "./BUTTONS/ShopNow";
 
 export default function Unique() {
 	return (
