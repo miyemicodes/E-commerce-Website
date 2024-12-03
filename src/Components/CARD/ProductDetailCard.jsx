@@ -3,14 +3,11 @@ import { useParams } from "react-router-dom";
 import { AddToCartBtn } from "../BUTTONS/AddToCart";
 import myProducts from "../JS/Products";
 import { usdCurrencyFormatter } from "../../helpers/currencyHelper";
-import CartContext from './../../store/cart-context';
+import CartContext from "./../../store/cart-context";
 
 export function ProductDetailCard() {
 	const cartCtx = useContext(CartContext);
 
-	function handleAddMealToCart() {
-		cartCtx.addItem(product);
-	}
 	const { id } = useParams();
 
 	const filterProducts = myProducts.filter((product) => product.id === id);
@@ -20,6 +17,9 @@ export function ProductDetailCard() {
 
 	if (!product) {
 		return <div>Product not found</div>;
+	}
+	function handleAddMealToCart(product) {
+		cartCtx.addItem(product);
 	}
 
 	return (
@@ -58,7 +58,7 @@ export function ProductDetailCard() {
 					</div>
 
 					<AddToCartBtn
-						onClick={handleAddMealToCart}
+						doOnClick={() => handleAddMealToCart(product)}
 						showText={true}
 					/>
 

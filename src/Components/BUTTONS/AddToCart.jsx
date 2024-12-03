@@ -2,8 +2,12 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FaCartArrowDown } from "react-icons/fa6";
 
-export function AddToCartBtn({ showText = true }) {
+export function AddToCartBtn({ doOnClick, showText = true }) {
 	const navigate = useNavigate();
+
+	if (doOnClick && typeof doOnClick === "function") {
+		doOnClick?.();
+	}
 
 	return (
 		<>
