@@ -22,13 +22,35 @@ function cartReducer(state, action) {
 				...existingItem,
 				quantity: existingItem.quantity + 1,
 			};
+			updatedItems[existingCartItemIndex] = updatedItem;
 		} else {
 			updatedItems.push({ ...action.item, quantity: 1 });
 		}
+
+		return { ...state, items: updatedItems };
 	}
 
 	if (action.type === "REMOVE_PRODUCT") {
 		//update the state to remove product
+		const existingCartItemIndex = state.items.findIndex(
+			() => item.id === action.item.id
+		);
+
+		const existingCartItem = state.items[existingCartItemIndex];
+
+		const updatedItems = [...state.items];
+
+		if (existingCartItem.quantity === 1) {
+			updatedItems.splice(existingCartItemIndex, 1);
+		} else {
+			const updatedItem = {
+				...existingCartItem,
+				quantity: existingCartItem.quantity - 1,
+			};
+
+			updatedItems[existingCartItemIndex] = updatedItem;
+		}
+		return { ...state, items: updatedItems };
 	}
 
 	return state;
