@@ -3,7 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import NavBar from "./Components/NavBar";
 import { Outlet } from "react-router-dom";
-import { CartContextProvider } from "./store/CartContext";
+import { CartContextProvider } from "./store/cart-context";
 
 function App() {
 	useEffect(() => {

@@ -3,13 +3,13 @@ import { useParams } from "react-router-dom";
 import { AddToCartBtn } from "../BUTTONS/AddToCart";
 import myProducts from "../JS/Products";
 import { usdCurrencyFormatter } from "../../helpers/currencyHelper";
-import CartContext from "../../store/CartContext";
+import CartContext from './../../store/cart-context';
 
 export function ProductDetailCard() {
 	const cartCtx = useContext(CartContext);
 
 	function handleAddMealToCart() {
-		cartCtx, addItem(product);
+		cartCtx.addItem(product);
 	}
 	const { id } = useParams();
 

@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import React, { createContext, useReducer } from "react";
 
 const CartContext = createContext({
 	items: [],
@@ -8,10 +8,9 @@ const CartContext = createContext({
 
 function cartReducer(state, action) {
 	if (action.type === "ADD_PRODUCT") {
-		//update the state to add product
-
+		// Update the state to add product
 		const existingCartItemIndex = state.items.findIndex(
-			() => item.id === action.item.id
+			(item) => item.id === action.item.id
 		);
 
 		const updatedItems = [...state.items];
@@ -31,26 +30,27 @@ function cartReducer(state, action) {
 	}
 
 	if (action.type === "REMOVE_PRODUCT") {
-		//update the state to remove product
+		// Update the state to remove product
 		const existingCartItemIndex = state.items.findIndex(
-			() => item.id === action.id
+			(item) => item.id === action.id
 		);
 
-		const existingCartItem = state.items[existingCartItemIndex];
+		if (existingCartItemIndex > -1) {
+			const existingCartItem = state.items[existingCartItemIndex];
+			const updatedItems = [...state.items];
 
-		const updatedItems = [...state.items];
+			if (existingCartItem.quantity === 1) {
+				updatedItems.splice(existingCartItemIndex, 1);
+			} else {
+				const updatedItem = {
+					...existingCartItem,
+					quantity: existingCartItem.quantity - 1,
+				};
 
-		if (existingCartItem.quantity === 1) {
-			updatedItems.splice(existingCartItemIndex, 1);
-		} else {
-			const updatedItem = {
-				...existingCartItem,
-				quantity: existingCartItem.quantity - 1,
-			};
-
-			updatedItems[existingCartItemIndex] = updatedItem;
+				updatedItems[existingCartItemIndex] = updatedItem;
+			}
+			return { ...state, items: updatedItems };
 		}
-		return { ...state, items: updatedItems };
 	}
 
 	return state;
@@ -71,10 +71,9 @@ export function CartContextProvider({ children }) {
 		addItem,
 		removeItem,
 	};
-	console.log(cartContext);
 
 	return (
-		<CartContextProvider value={cartContext}>{children}</CartContextProvider>
+		<CartContext.Provider value={cartContext}>{children}</CartContext.Provider>
 	);
 }
 
