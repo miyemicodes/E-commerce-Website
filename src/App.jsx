@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import NavBar from "./Components/NavBar";
 import { Outlet } from "react-router-dom";
+import { CartContextProvider } from "./store/CartContext";
 
 function App() {
 	useEffect(() => {
@@ -13,11 +14,11 @@ function App() {
 	}, []);
 
 	return (
-		<>
+		<CartContextProvider>
 			<NavBar />
 			{/* other children of App routes are here */}
 			<Outlet />
-		</>
+		</CartContextProvider>
 	);
 }
 

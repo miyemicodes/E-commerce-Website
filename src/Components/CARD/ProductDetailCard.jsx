@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { AddToCartBtn } from "../BUTTONS/AddToCart";
 import myProducts from "../JS/Products";
 import { usdCurrencyFormatter } from "../../helpers/currencyHelper";
+import CartContext from "../../store/CartContext";
 
-export function ProductDetailCard(props) {
+export function ProductDetailCard() {
+	const cartCtx = useContext(CartContext);
+
+	function handleAddMealToCart() {
+		cartCtx, addItem(product);
+	}
 	const { id } = useParams();
 
 	const filterProducts = myProducts.filter((product) => product.id === id);
@@ -51,7 +57,10 @@ export function ProductDetailCard(props) {
 						</p>
 					</div>
 
-					<AddToCartBtn showText={true} />
+					<AddToCartBtn
+						onClick={handleAddMealToCart}
+						showText={true}
+					/>
 
 					<div className="flex flex-col items-start justify-start gap-2">
 						<div className="flex items-center justify-start font-semibold">
