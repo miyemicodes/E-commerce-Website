@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+
 import { AddToCartBtn } from "../BUTTONS/AddToCart";
 import myProducts from "../JS/Products";
 import { usdCurrencyFormatter } from "../../helpers/currencyHelper";
 import CartContext from "./../../store/cart-context";
 
 export function ProductDetailCard() {
+	const navigate = useNavigate();
 	const cartCtx = useContext(CartContext);
 
 	const { id } = useParams();
@@ -20,6 +23,8 @@ export function ProductDetailCard() {
 	}
 	function handleAddMealToCart(product) {
 		cartCtx.addItem(product);
+		console.log('here')
+		navigate("/User/cart")
 	}
 
 	return (
