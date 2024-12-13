@@ -5,7 +5,7 @@ import { usdCurrencyFormatter } from "../../helpers/currencyHelper";
 export function Cart() {
 	const cartCtx = useContext(CartContext);
 	const cartTotal = cartCtx.items.reduce((totalPrice, item) => {
-		totalPrice + item.quantity * item.price;
+		return totalPrice + item.quantity * item.price;
 	}, 0);
 
 	const intPrice = usdCurrencyFormatter(cartTotal);
