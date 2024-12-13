@@ -10,20 +10,26 @@ const CartPage = () => {
 	return (
 		<>
 			<div className="w-full">
-				<h1 className="font-semibold text-lg p-3 ">Cart</h1>
-				<ul>
-					{cartCtx.items.map((item) => (
-						<CartCard
-							key={item.id}
-							price={item.price}
-							name={item.name}
-							image={item.image}
-							brand={item.brand}
-							oldPrice={item.oldPrice}
-						/>
-					))}
-				</ul>
-				<Cart />
+				<h1 className="font-semibold text-2xl tracking-wide leading-[6px] p-3 mb-4">
+					CART
+				</h1>
+				<div className="w-full flex flex-col lg:flex-row gap-6">
+					<ul className="w-full border-2 border-[#f6ead1]">
+						{cartCtx.items.map((item) => (
+							<CartCard
+								key={item.id}
+								id={item.id}
+								price={item.price}
+								name={item.name}
+								image={item.image}
+								brand={item.brand}
+								oldPrice={item.oldPrice}
+
+							/>
+						))}
+					</ul>
+					<Cart />
+				</div>
 			</div>
 		</>
 	);

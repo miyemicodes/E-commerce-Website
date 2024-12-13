@@ -12,12 +12,17 @@ export function Cart() {
 
 	return (
 		<>
-			<div className="bg-[#787977] text-start">
-				<h1 className="text-[#8a8b85]">CART SUMMARY</h1>
-				<div className="flex items-center justify-between bg-white">
-					<p className="font-semibold">Subtotal</p>
-					<span className="font-bold">{intPrice}</span>
+			<div className="w-full h-fit border-2 border-[#f6ead1] text-start px-4 py-6 lg:w-[40%]">
+				<h1 className="text-black font-semibold text-xl mb-4">CART SUMMARY</h1>
+				<div className="flex items-center justify-between bg-white mb-4">
+					<p className="font-semibold text-lg">Subtotal : </p>
+					<span className="font-bold border-2 border-[#f6ead1] p-4 text-lg">
+						{intPrice}
+					</span>
 				</div>
+				<button className="w-full bg-[#967f50] font-semibold px-4 py-2 text-[#f6ead1] ">
+					CHECKOUT
+				</button>
 			</div>
 		</>
 	);
