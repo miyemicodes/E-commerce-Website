@@ -1,28 +1,31 @@
 import React from "react";
 import { FaMinus, FaPlus } from "react-icons/fa6";
 import { GoTrash } from "react-icons/go";
+import { usdCurrencyFormatter } from "../../helpers/currencyHelper";
 
-export function CartCard() {
+export function CartCard(props) {
+	const intPrice = usdCurrencyFormatter(props?.price);
+
 	return (
 		<>
 			<div className="w-full bg-white border-none rounded-md p-2">
 				<div className="flex items-start justify-start gap-2">
 					<div className="h-[100px] w-[150px]">
 						<img
-							src=""
+							src={props.image}
 							className="h-[100px] w-[100px] object-cover"
 						/>
 					</div>
 					<div className="flex flex-col gap-1">
-						<p className="text-[12px] text-[#616160]">
-							Diamond Boxed Ring with Rose gold inscriptions and Emerald Stones
-						</p>
+						<p className="text-[12px] text-[#616160]">{props.name} </p>
 						<p className="text-[#8a8b85] text-[12px]">
 							Seller : Perfecte Stones
 						</p>
 						<div>
-							<span className="font-semibold"> $6007 </span>
-							<span className="line-through text-[#787973]"> $10,000</span>
+							<span className="font-semibold"> {intPrice} </span>
+							<span className="line-through text-[#787973]">
+								{props.oldPrice}
+							</span>
 						</div>
 						<span className="text-[#8a8b85] text-[12px]">In Stock</span>
 					</div>
