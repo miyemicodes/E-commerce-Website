@@ -24,7 +24,9 @@ const CartPage = () => {
 								image={item.image}
 								brand={item.brand}
 								oldPrice={item.oldPrice}
-
+								quantity={item.quantity}
+								onIncrease={() => cartCtx.addItem(item)}
+								onDecrease={() => cartCtx.removeItem(item.id)}
 							/>
 						))}
 					</ul>

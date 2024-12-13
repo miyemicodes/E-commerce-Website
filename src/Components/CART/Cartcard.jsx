@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import { FaMinus, FaPlus } from "react-icons/fa6";
 import { GoTrash } from "react-icons/go";
+import { FaMinus, FaPlus } from "react-icons/fa6";
 
 import { usdCurrencyFormatter } from "../../helpers/currencyHelper";
 import CartContext from "../../store/cart-context";
 
-export function CartCard(props) {
+export function CartCard({ quantity, onIncrease, onDecrease, ...props }) {
 	const cartCtx = useContext(CartContext);
 
 	function handleRemoveMealFromCart(id) {
@@ -46,11 +46,21 @@ export function CartCard(props) {
 						<GoTrash />
 						<p className="font-semibold">REMOVE</p>
 					</button>
-
 					<div className="flex items-center gap-7">
-						<FaMinus className="bg-[#d1ab6c] text-white text-2xl p-1 rounded-md" />
-						<span className="font-semibold"> 2 </span>
-						<FaPlus className="bg-[#d1ab6c] text-white text-2xl p-1 rounded-md" />
+						<button
+							onClick={onDecrease}
+							className="bg-[#d1ab6c] text-white text-2xl p-1 rounded-md"
+						>
+							<FaMinus />
+						</button>
+						<span className="font-semibold"> {quantity} </span>
+
+						<button
+							onClick={onIncrease}
+							className="bg-[#d1ab6c] text-white text-2xl p-1 rounded-md"
+						>
+							<FaPlus />
+						</button>
 					</div>
 				</div>
 			</div>
