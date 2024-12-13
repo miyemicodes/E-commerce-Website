@@ -9,10 +9,15 @@ export default function ContactUsPage() {
 	return (
 		<>
 			<Cover />
-			<div className="w-full flex flex-col items-center justify-center gap-3 mt-10 mb-10 px-8">
-				<div className="w-full flex flex-col items-center justify-center gap-3 md:flex-row md:justify-between">
-					<ContactAddress />
-					<ContactForm />
+			<div className="w-full flex flex-col  items-center justify-center mt-10 mb-10 px-4">
+				<div className="w-full flex flex-col md:flex-row items-center justify-center gap-3 mb-6 ">
+					<div className=" w-full lg:w-[50%] h-fit border-2 border-[#f6ead1] py-3 px-6">
+						<ContactAddress />
+					</div>
+
+					<div className="w-full lg:w-[50%] h-fit border-2 border-[#f6ead1] py-3 px-6">
+						<ContactForm />
+					</div>
 				</div>
 				<ContactSocials />
 			</div>

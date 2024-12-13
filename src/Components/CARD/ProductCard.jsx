@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaStarHalf } from "react-icons/fa";
 import { GiSelfLove } from "react-icons/gi";
-import { AddToCartBtn } from "../BUTTONS/AddToCart";
+import { FaCartShopping } from "react-icons/fa6";
+
 import { usdCurrencyFormatter } from "../../helpers/currencyHelper";
 
 export default function ProductCard(props) {
@@ -38,8 +39,9 @@ export default function ProductCard(props) {
 							<Link to="/User/saved-items">
 								<GiSelfLove className=" text-lg" />
 							</Link>
-
-							<AddToCartBtn showText={false} />
+							<Link to="/User/cart">
+								<FaCartShopping />
+							</Link>
 						</div>
 					</div>
 				</div>
