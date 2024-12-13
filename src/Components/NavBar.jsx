@@ -1,11 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Search from "./Search";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 import { FaCartShopping, FaUser } from "react-icons/fa6";
+import CartContext from "../store/cart-context";
 
 export default function NavBar() {
+	const cartCtx = useContext(CartContext);
+
+	const totalCartProducts = cartCtx.items.reduce(
+		(totalNumberOfProducts, item) => {
+			return totalNumberOfProducts + item.quantity;
+		},
+		0
+	);
+
 	const [navOpen, setNavOpen] = useState(false);
 
 	const handleClick = () => {
@@ -80,10 +90,14 @@ export default function NavBar() {
 					</div>
 
 					<div className="text-xl text-[#967f50] flex flex-row items-center justify-center gap-5">
-						{/* /productdetail for texting and designing of the product details page ,navigating to it */}
-						<Link to="/productdetail">
-							<FaCartShopping />
-						</Link>
+						<div className="relative">
+							<Link to="/User/cart">
+								<FaCartShopping />
+							</Link>
+							<span className="absolute bottom-2 left-4 text-sm font-bold bg-transparent border-2 border-[#967f50] px-1 rounded-full">
+								{totalCartProducts}
+							</span>
+						</div>
 
 						<Link to="/User">
 							<FaUser />
