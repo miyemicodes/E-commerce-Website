@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
-export default function CheckOut({ children, open }) {
+export default function Modal({ children, open }) {
 	const dialog = useRef();
 
 	useEffect(() => {

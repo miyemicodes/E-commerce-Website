@@ -14,11 +14,11 @@ function App() {
 	}, []);
 
 	return (
-		<CartContextProvider>
+			<CartContextProvider>
 			<NavBar />
-			{/* other children of App routes are here */}
-			<Outlet />
-		</CartContextProvider>
+				{/* other children of App routes are here */}
+				<Outlet />
+			</CartContextProvider>
 	);
 }
 

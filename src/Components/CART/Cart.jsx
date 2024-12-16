@@ -1,18 +1,25 @@
 import React, { useContext } from "react";
 import CartContext from "../../store/cart-context";
 import { usdCurrencyFormatter } from "../../helpers/currencyHelper";
+import UserProgressContext from "../../store/UserProgressContext";
 
 export function Cart() {
 	const cartCtx = useContext(CartContext);
+	const userProgressCtx = useContext(UserProgressContext);
+
 	const cartTotal = cartCtx.items.reduce((totalPrice, item) => {
 		return totalPrice + item.quantity * item.price;
 	}, 0);
 
 	const totalQuantity = cartCtx.items.reduce((totalItem, item) => {
 		return totalItem + item.quantity;
-	},0);
+	}, 0);
 
 	const intPrice = usdCurrencyFormatter(cartTotal);
+
+	function handleGoToCheckout() {
+		userProgressCtx.showCheckout();
+	}
 
 	return (
 		<>
@@ -33,9 +40,14 @@ export function Cart() {
 					</div>
 				</div>
 
-				<button className="w-full bg-[#967f50] font-semibold px-4 py-2 text-[#f6ead1] ">
-					CHECKOUT
-				</button>
+				{cartCtx.items.length > 0 && (
+					<button
+						onClick={handleGoToCheckout}
+						className="w-full bg-[#967f50] font-semibold px-4 py-2 text-[#f6ead1] "
+					>
+						CHECKOUT
+					</button>
+				)}
 			</div>
 		</>
 	);
