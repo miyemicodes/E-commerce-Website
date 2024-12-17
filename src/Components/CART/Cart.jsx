@@ -59,26 +59,40 @@ export function Cart() {
 				isOpen={isModalOpen}
 				onClose={closeModal}
 			>
-				<form>
-					<button onClick={closeModal}>&times;</button>
+				<form className="w-[500px]">
+					<div className="flex items-center justify-between">
+						<p className="font-bold border-2 border-[#f6ead1] p-2 text-xl">
+							{intPrice}
+						</p>
+						<button
+							className="font-bold text-3xl"
+							onClick={closeModal}
+						>
+							&times;
+						</button>
+					</div>
 
-					<h2>Checkout</h2>
-					<p>Total Amount: {intPrice}</p>
+					<h2 className="text-2xl font-semibold">
+						How would you like too get your order ?
+					</h2>
+					<div className="control-row">
+						<Input
+							label="First Name"
+							type="text"
+							id="first-name"
+						/>
+						<Input
+							label="Last Name"
+							type="text"
+							id="last-name"
+						/>
+					</div>
 					<Input
-						label="Full Name"
-						type="text"
-						id="full-name"
-					/>
-					<Input
-						label="E-Mail Address"
-						type="email"
-						id="email"
-					/>
-					<Input
-						label="Street"
+						label="Street address"
 						type="text"
 						id="street"
 					/>
+
 					<div className="control-row">
 						<Input
 							label="Postal Code"
@@ -86,11 +100,26 @@ export function Cart() {
 							id="postal-code"
 						/>
 						<Input
-							label="City"
+							label="State"
+							type="text"
+							id="state"
+						/>
+						<Input
+							label="Town/City"
 							type="text"
 							id="city"
 						/>
 					</div>
+
+					<Input
+						label="E-Mail Address"
+						type="email"
+						id="email"
+					/>
+
+					<button className="w-full bg-[#967f50] font-semibold px-4 py-2 text-[#f6ead1] mt-4">
+						Go to Payment
+					</button>
 				</form>
 			</CheckoutModal>
 		</>

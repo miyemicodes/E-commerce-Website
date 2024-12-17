@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const CheckoutModal = ({ children, isOpen, onClose }) => {
+const CheckoutModal = ({ children, isOpen}) => {
 	if (!isOpen) return null;
 	return ReactDOM.createPortal(
 		<div className="modal-overlay">
