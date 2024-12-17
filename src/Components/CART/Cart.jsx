@@ -1,11 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import CartContext from "../../store/cart-context";
 import { usdCurrencyFormatter } from "../../helpers/currencyHelper";
-import UserProgressContext from "../../store/UserProgressContext";
+
+
 
 export function Cart() {
+	const [isModalOpen, setIsModalOpen] = useState(false);
+
+	const openModal = () => {setIsModalOpen(true)};
+	const closeModal = () => {setIsModalOpen(false)};
+
 	const cartCtx = useContext(CartContext);
-	const userProgressCtx = useContext(UserProgressContext);
 
 	const cartTotal = cartCtx.items.reduce((totalPrice, item) => {
 		return totalPrice + item.quantity * item.price;
@@ -16,10 +21,6 @@ export function Cart() {
 	}, 0);
 
 	const intPrice = usdCurrencyFormatter(cartTotal);
-
-	function handleGoToCheckout() {
-		userProgressCtx.showCheckout();
-	}
 
 	return (
 		<>
@@ -42,13 +43,47 @@ export function Cart() {
 
 				{cartCtx.items.length > 0 && (
 					<button
-						onClick={handleGoToCheckout}
+						onClick={openModal}
 						className="w-full bg-[#967f50] font-semibold px-4 py-2 text-[#f6ead1] "
 					>
 						CHECKOUT
 					</button>
 				)}
 			</div>
+			<Modal>
+				<form>
+					<h2>Checkout</h2>
+					<p>Total Amount: {intPrice}</p>
+
+					<Input
+						label="Full Name"
+						type="text"
+						id="full-name"
+					/>
+					<Input
+						label="E-Mail Address"
+						type="email"
+						id="email"
+					/>
+					<Input
+						label="Street"
+						type="text"
+						id="street"
+					/>
+					<div className="control-row">
+						<Input
+							label="Postal Code"
+							type="text"
+							id="postal-code"
+						/>
+						<Input
+							label="City"
+							type="text"
+							id="city"
+						/>
+					</div>
+				</form>
+			</Modal>
 		</>
 	);
 }

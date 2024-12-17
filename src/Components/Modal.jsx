@@ -1,15 +1,14 @@
 import React from "react";
-import { useEffect, useRef } from "react";
-import { createPortal } from "react-dom";
+import ReactDOM from "react-dom";
 
-export default function Modal({ children, open }) {
-	const dialog = useRef();
+const CheckoutModal = ({ children, isOpen, onClose }) => {
+	if (!isOpen) return null;
+	return ReactDOM.createPortal(
+		<div>
+			<button onClick={onClose}>close button test</button>
+			<div>{children}</div>
+		</div>
+	);
+};
 
-	useEffect(() => {
-		if (open) {
-			dialog.current.showModal();
-		}
-	}, [open]);
-
-	return createPortal(<dialog ref={dialog}>{children}</dialog>);
-}
+export default CheckoutModal;
