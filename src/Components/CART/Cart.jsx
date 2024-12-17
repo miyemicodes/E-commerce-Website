@@ -1,14 +1,18 @@
 import React, { useContext, useState } from "react";
 import CartContext from "../../store/cart-context";
 import { usdCurrencyFormatter } from "../../helpers/currencyHelper";
-
-
+import CheckoutModal from "../CheckModal";
+import Input from "../Input";
 
 export function Cart() {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 
-	const openModal = () => {setIsModalOpen(true)};
-	const closeModal = () => {setIsModalOpen(false)};
+	const openModal = () => {
+		setIsModalOpen(true);
+	};
+	const closeModal = () => {
+		setIsModalOpen(false);
+	};
 
 	const cartCtx = useContext(CartContext);
 
@@ -50,11 +54,16 @@ export function Cart() {
 					</button>
 				)}
 			</div>
-			<Modal>
+
+			<CheckoutModal
+				isOpen={isModalOpen}
+				onClose={closeModal}
+			>
 				<form>
+					<button onClick={closeModal}>&times;</button>
+
 					<h2>Checkout</h2>
 					<p>Total Amount: {intPrice}</p>
-
 					<Input
 						label="Full Name"
 						type="text"
@@ -83,7 +92,7 @@ export function Cart() {
 						/>
 					</div>
 				</form>
-			</Modal>
+			</CheckoutModal>
 		</>
 	);
 }
