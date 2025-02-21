@@ -31,7 +31,7 @@ export default function Related() {
 					/>
 				</div>
 
-				<div className=" items-center justify-center w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+				<div className=" items-center justify-center w-full h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[auto_auto_auto_auto] gap-3">
 					{relateProducts.map((product) => (
 						<RelatedCard
 							key={product.id}

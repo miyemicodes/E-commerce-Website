@@ -1,4 +1,5 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import Button from "./BUTTONS/ShopNow";
 import homeImage1 from "../assets/Homepage-1.jpg";
 import homeImage2 from "../assets/Homepage-2.jpg";
@@ -15,7 +16,7 @@ export default function BannerPage() {
 						className="text-center text-4xl font-serif md:text-5xl md:text-start lg:text-7xl 2xl:text-8xl"
 					>
 						Experience the Brilliance of
-						<img
+						<LazyLoadImage
 							src={textImage}
 							className="w-12 h-8 object-cover inline rounded-full gap-2"
 						/>
@@ -33,7 +34,7 @@ export default function BannerPage() {
 					<div className="w-[90%] flex flex-row items-center justify-center gap-9 md:justify-start lg:justify-between">
 						<Button />
 
-						<img
+						<LazyLoadImage
 							src={qualityImage}
 							data-aos="fade-up-left"
 							className="md:w-20 h-20 lg:w-30 lg:h-30 object-cover"
@@ -42,13 +43,13 @@ export default function BannerPage() {
 				</div>
 
 				<div className="flex flex-row items-center justify-center flex-1 gap-4 rounded-full w-[100%]">
-					<img
+					<LazyLoadImage
 						src={homeImage1}
 						data-aos="fade-down"
 						className=" md:w-[50%] h-96  lg:h-full object-cover rounded-t-full"
 					/>
 
-					<img
+					<LazyLoadImage
 						src={homeImage2}
 						data-aos="fade-up"
 						className="hidden md:block md:w-[50%] h-96  lg:h-full object-cover rounded-b-full"

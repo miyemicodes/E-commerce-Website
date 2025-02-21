@@ -1,18 +1,18 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 
-import Home from "./Pages/Home.jsx";
 import ErrorPage from "./Pages/ErrorPage.jsx";
 import Shop from "./Pages/Shop.jsx";
 import ProductDetails from "./Pages/ProductDetail.jsx";
 import User from "./Pages/Userprofile.jsx";
 import AboutUs from "./Pages/AboutUs.jsx";
 import FaqPage from "./Pages/FaqPage.jsx";
-import ReviewsPage  from "./Pages/Reviews.jsx";
-import  ContactUsPage from "./Pages/ContactUs.jsx";
+import ReviewsPage from "./Pages/Reviews.jsx";
+import ContactUsPage from "./Pages/ContactUs.jsx";
 
 import AccountOverview from "./Pages/UserPages/AccountOverview.jsx";
 import RecentlyViewedPage from "./Pages/UserPages/RecentlyViewedPage.jsx";
@@ -24,16 +24,29 @@ import CartPage from "./Pages/UserPages/CartPage.jsx";
 import OrdersPage from "./Pages/UserPages/OrdersPage.jsx";
 import NewsletterPage from "./Pages/UserPages/NewsletterPage.jsx";
 
+const Home = lazy(() => import("./Pages/Home"));
+
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <App />,
 		errorElement: <ErrorPage />,
 		children: [
-			{ index: true, element: <Home /> },
+			{
+				index: true,
+				element: (
+					<Suspense>
+						<Home />
+					</Suspense>
+				),
+			},
 			{
 				path: "shop",
-				element: <Shop />,
+				element: (
+					<Suspense>
+						<Shop />
+					</Suspense>
+				),
 			},
 			{
 				path: "productdetail/:id",
