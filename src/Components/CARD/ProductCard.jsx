@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaStarHalf } from "react-icons/fa";
-import { GiSelfLove } from "react-icons/gi";
 import { FaCartShopping } from "react-icons/fa6";
 
 import { usdCurrencyFormatter } from "../../helpers/currencyHelper";
 
-export default function ProductCard(props) {
+export default function ProductCard({ SavedIconComponent, ...props }) {
 	const intPrice = usdCurrencyFormatter(props?.price);
 
 	return (
@@ -36,9 +35,8 @@ export default function ProductCard(props) {
 					<div className="flex items-center justify-between gap-2">
 						<p className="font-semibold text-lg"> {intPrice}</p>
 						<div className="flex gap-2">
-							<Link to="/User/saved-items">
-								<GiSelfLove className=" text-lg" />
-							</Link>
+							<SavedIconComponent product={props} />
+
 							<Link to="/User/cart">
 								<FaCartShopping />
 							</Link>

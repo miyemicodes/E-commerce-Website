@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import Search from "./Search";
+import SaveIcon from "./SavedIcon";
 import categoryImage from "../assets/categoryImage.jpg";
 import myProducts from "./JS/Products";
 import ProductCard from "./CARD/ProductCard";
@@ -26,7 +27,13 @@ export default function ProductCategory() {
 			Boolean(catProductValue) ||
 			Boolean(brandCatValue) ||
 			Boolean(selectedFiltPrice),
-		[searchValue, genderCatValue, catProductValue, brandCatValue, selectedFiltPrice]
+		[
+			searchValue,
+			genderCatValue,
+			catProductValue,
+			brandCatValue,
+			selectedFiltPrice,
+		]
 	);
 
 	const filteredProducts = useMemo(() => {
@@ -37,7 +44,7 @@ export default function ProductCategory() {
 
 				const matchSearch = searchValue
 					? product.name.toLowerCase().includes(lowerSearchTerm) ||
-					product.description.toLowerCase().includes(lowerSearchTerm)
+					  product.description.toLowerCase().includes(lowerSearchTerm)
 					: true;
 				const matchGenderFilter = genderCatValue
 					? product?.gender?.toLowerCase() === genderCatValue?.toLowerCase()
@@ -351,6 +358,7 @@ export default function ProductCategory() {
 							<ProductCard
 								key={product.id}
 								{...product}
+								SavedIconComponent={SaveIcon}
 							/>
 						))}
 					</ul>
