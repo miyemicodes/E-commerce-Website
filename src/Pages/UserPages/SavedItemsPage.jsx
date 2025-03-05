@@ -1,8 +1,12 @@
 import { useSavedProduct } from "../../store/saved-context";
 import SaveIcon from "../../Components/SavedIcon";
+import { usdCurrencyFormatter } from "../../helpers/currencyHelper";
 
-const SavedPage = () => {
+const SavedPage = (props) => {
 	const { savedProducts } = useSavedProduct();
+	const intPrice = usdCurrencyFormatter(props?.price);
+
+	console.log(intPrice);
 
 	return (
 		<div>
@@ -15,8 +19,20 @@ const SavedPage = () => {
 						key={product.id}
 						className="p-4 border rounded-md"
 					>
-						<h3>{product.name}</h3>
-						<SaveIcon product={product} />
+						<div className="flex items-center justify-between gap-2">
+							<h3>{product.name}</h3>
+							<div className="h-[120px] w-full lg:w-full">
+								<img
+									className="w-[100px] h-[100px] object-cover"
+									src={product.image}
+									alt={product.name}
+								/>
+							</div>
+						</div>
+						<div className="flex flex-col-reverse items-center justify-between gap-2">
+							<p className="text-bold text-lg ">{intPrice}</p>
+							<SaveIcon product={product} />
+						</div>
 						{/* Allows removing from saved page */}
 					</div>
 				))

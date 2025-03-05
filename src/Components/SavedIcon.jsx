@@ -16,7 +16,10 @@ const SaveIcon = ({ product }) => {
 				className={`text-lg ${isSaved ? "text-red-500" : "text-gray-400"}`}
 			/>
 		</button>
+
+		
 	);
+
 };
 
 export default SaveIcon;
