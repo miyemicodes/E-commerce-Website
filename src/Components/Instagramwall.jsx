@@ -1,9 +1,9 @@
 import React from "react";
 import instaImage1 from "../assets/instapage-image-bracelet.jpg";
-import instaImage2 from "../assets/intstapage-image-brooch.jpg";
+import instaImage2 from "../assets/butterfly-brooch.jpg";
 import instaImage3 from "../assets/instapage-image-diamond.jpg";
 import instaImage4 from "../assets/instapage-image-ring.jpg";
-import instaImage5 from "../assets/instapage-image-neckpiece.jpg";
+import instaImage5 from "../assets/leather-choker-necklaces.jpg";
 
 export default function Instawall() {
 	return (
@@ -61,9 +61,3 @@ export default function Instawall() {
 		</>
 	);
 }
-
-
-
-
-
-

@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 import Search from "./Search";
 import SaveIcon from "./SavedIcon";
-import categoryImage from "../assets/categoryImage.jpg";
+import categoryImage from "../assets/lady-on-white-jacket.jpg";
 import myProducts from "./JS/Products";
 import ProductCard from "./CARD/ProductCard";
 import Pagination from "./Pagination";

@@ -5,6 +5,12 @@ import NavBar from "./Components/NavBar";
 import { Outlet } from "react-router-dom";
 import { CartContextProvider } from "./store/cart-context";
 import { SavedProductProvider } from "./store/saved-context";
+import Tracker from "@openreplay/tracker";
+
+const tracker = new Tracker({
+	projectKey: "fZ9UEWTKRcdEf2WzGb92",
+});
+tracker.start();
 
 function App() {
 	useEffect(() => {
